@@ -1,0 +1,15 @@
+// Aquí se van a colocar las funciones y los mixins para evitarnos de repetir código.
+
+@use 'sass:math';
+
+@mixin flexbox($justify) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+
+
+@function px-rem($px) {
+    $rem: math.div($px, 16) * 1rem;
+    @return $rem;
+}

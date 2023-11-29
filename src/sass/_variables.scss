@@ -1,0 +1,17 @@
+//Aquí van todas las varables que se usarán para facilitar el trabajo.
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Raleway:wght@200;300;400;500&display=swap');
+
+@mixin font($font) {
+    font-family: $font, sans-serif;
+}
+
+//! DARK MODE
+$primary-color: rgb(12, 10, 61);
+$secondary-color: rgb(83, 30, 123);
+$tertiary-color: rgb(123, 30, 122);
+$quaternary-color: rgb(176, 54, 107);
+$quinary-color: rgb(20 18 71);
+$p-color: rgb(237, 237, 237);
+$heading-color: rgb(247, 247, 247);
+$border-btn-color: rgb(243, 198, 119);
+$border-btn-color-hover: rgb(243 198 119 / .5);

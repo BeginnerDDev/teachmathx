@@ -1,0 +1,44 @@
+---
+interface Props {
+    pageTitle?: string;
+    nameWebSite?: string;
+    pageDescription?: string;
+}
+
+//Props para automatizar un poquito más.
+const {pageTitle , nameWebSite = 'TeachMathX', pageDescription} = Astro.props
+
+// Año dinámico para el footer.
+const CurrentDate = new Date()
+let year = CurrentDate.getFullYear()
+
+import '../css/style.css'
+---
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={pageDescription}>
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle} | {nameWebSite}</title>
+</head>
+<body>
+
+    <header>
+
+    </header>
+
+    <main>
+        <slot />
+    </main>
+    
+    <footer>
+        <p>
+            Copyright &copy; {year} | Todos los Derechos Reservdados - {nameWebSite}
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,294 @@
+@use 'variables';
+@use 'mixins-func';
+@use 'global';
+
+body {
+    background: rgb(0 0 0);
+    overflow: hidden;
+}
+
+$color: (
+    funciones: (
+        background: variables.$primary-color
+    ),
+
+    limites: (
+        background: variables.$secondary-color
+    ),
+    continuidad: (
+        background: variables.$tertiary-color
+    ),
+    derivadas: (
+        background: variables.$quaternary-color
+    ),
+    nosotros: (
+        background: variables.$quinary-color
+    )
+);
+
+.header {
+    background: transparent;
+    position: absolute;
+}
+
+.nav {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__item {
+        width: mixins-func.px-rem(250);
+        height: mixins-func.px-rem(350);
+        position: absolute;
+        top: 50%;
+        border-radius: mixins-func.px-rem(10);
+        transform: translate(0, -50%);
+        transition: .5s;
+        overflow: hidden;
+
+        &.funciones {
+            background: map-get(map-get($color, funciones), background);
+        }
+
+        &.limites {
+            background: map-get(map-get($color, limites), background);
+        }
+        &.continuidad {
+            background: map-get(map-get($color, continuidad), background);
+        }
+        &.derivadas {
+            background: map-get(map-get($color, derivadas), background);
+        }
+        &.nosotros {
+            background: map-get(map-get($color, nosotros), background);
+        }
+
+        &:nth-child(1) {
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            border-radius: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        &:nth-child(2) {
+            left: 50%;
+        }
+
+        &:nth-child(3) {
+            left: calc(50% + mixins-func.px-rem(280));
+        }
+
+        &:nth-child(4) {
+            left: calc(50% + mixins-func.px-rem(560));
+        }
+
+        &:nth-child(5) {
+            left: calc(50% + mixins-func.px-rem(840));
+        }
+
+        &:nth-child(1) .nav__content {
+            display: flex;
+        }
+    }
+
+    &__content {
+        width: 50%;
+        height: 100%;
+        margin-left: mixins-func.px-rem(60);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: variables.$p-color;
+        display: none;
+    }
+
+    &__materia {
+        position: relative;
+        font-size: mixins-func.px-rem(13);
+        color: rgb(255 255 255 / .5);
+        opacity: 0;
+        animation: animate .8s ease-in-out .1s 1 forwards;
+        user-select: none;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: mixins-func.px-rem(-8);
+            width: 5%;
+            height: mixins-func.px-rem(2);
+            background: rgb(255 255 255 / .8);
+            border-radius: mixins-func.px-rem(18);
+            opacity: 0;
+            animation: animate .8s ease-in-out 1 forwards;
+        }
+    }
+
+    &__title {
+        font-size: mixins-func.px-rem(56);
+        line-height: 1.8;
+        text-transform: uppercase;
+        opacity: 0;
+        animation: animate .8s ease-in-out .2s 1 forwards;
+
+    }
+
+    &__description {
+        width: 70%;
+        font-size: mixins-func.px-rem(13);
+        line-height: 1.6;
+        opacity: 0;
+        animation: animate .8s ease-in-out .4s 1 forwards;
+
+        span {
+            user-select: none;
+        }
+    }
+
+    &__btn {
+        margin-top: mixins-func.px-rem(24);
+        display: flex;
+        gap: mixins-func.px-rem(20);
+
+        a {
+            position: relative;
+            padding: mixins-func.px-rem(11) mixins-func.px-rem(20);
+            font-size: mixins-func.px-rem(13);
+            border-radius: mixins-func.px-rem(8);
+            opacity: 0;
+            animation: animate .8s ease-in-out .6s 1 forwards;
+            transition: border 350ms ease;
+
+            &::after,
+            &::before {
+                content: '';
+                width: 10%;
+                height: 20%;
+                position: absolute;
+                transition: all 350ms ease;
+                border-radius: mixins-func.px-rem(8);
+            }
+
+            &::after {
+                bottom: 0;
+                right: 0;
+                border-bottom: 2px solid variables.$border-btn-color;
+                border-right: 2px solid variables.$border-btn-color;
+            }
+
+            &:before {
+                top: 0;
+                left: 0;
+                border-top: 2px solid variables.$border-btn-color;
+                border-left: 2px solid variables.$border-btn-color;
+            }
+
+            &:hover {
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
+
+                &:before,
+                &:after {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    &__subtitle {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        // background: url(/assets/img/1200px-PolygonsFunction.svg.png) no-repeat center center/cover;
+        user-select: none;
+
+        &--content {
+            padding: mixins-func.px-rem(12);
+            background: linear-gradient(180deg, transparent, rgb(0 0 0 / .5));
+            backdrop-filter: blur(10px);
+        }
+
+        &--materia {
+            position: relative;
+            font-size: mixins-func.px-rem(10);
+            color: rgb(255 255 255 / .5);
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: mixins-func.px-rem(-8);
+                width: 10%;
+                height: mixins-func.px-rem(2);
+                background: rgb(255 255 255 / .8);
+                border-radius: mixins-func.px-rem(18);
+            }
+        }
+    }
+
+    @keyframes animate {
+        from {
+            opacity: 0;
+            transform: translate(0, mixins-func.px-rem(100));
+            filter: blur(mixins-func.px-rem(33));
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(0);
+            filter: blur(0);
+        }
+    }
+
+    &__preview {
+        width: 100%;
+        position: absolute;
+        bottom: mixins-func.px-rem(25);
+        display: flex;
+        justify-content: center;
+        gap: mixins-func.px-rem(7);
+
+        button {
+            width: mixins-func.px-rem(30);
+            height: mixins-func.px-rem(30);
+            @include mixins-func.flexbox(center);
+            border-radius: 50%;
+            border: 2px solid variables.$border-btn-color-hover;
+            outline: none;
+            background: transparent;
+            transition: all 350ms ease;
+            cursor: pointer;
+
+            &:hover {
+                background: variables.$border-btn-color-hover;
+            }
+
+            svg {
+                width: mixins-func.px-rem(10);
+                stroke: rgb(255 255 255 / .8);
+            }
+        }
+    }
+
+    // &__ux {
+    //     position: fixed;
+    //     bottom: 30px;
+    //     right: 0;
+    //     transform: translateX(-50%);
+    //     background: rgb(255 255 255 / .1);
+    //     color: #fff;
+    //     padding: 10px;
+    //     border-radius: 5px;
+
+    //     p {
+    //         font-size: mixins-func.px-rem(12);
+    //     }
+    // }
+
+}
