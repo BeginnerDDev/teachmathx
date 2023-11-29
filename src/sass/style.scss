@@ -1,1 +1,22 @@
-@use 'global'
+@use 'global';
+
+
+.header {
+    width: 100%;
+    height: 80px;
+    padding-inline: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: whitesmoke;
+    background: #000;
+
+    
+    .nav {
+
+        &__container {
+            display: flex;
+            gap: 20px;
+        }
+    }
+}

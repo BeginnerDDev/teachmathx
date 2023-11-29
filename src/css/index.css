@@ -53,8 +53,8 @@ a {
   color: rgba(255, 255, 255, 0.9);
 }
 .header__logo a span {
-  font-size: 1.375rem;
-  font-weight: 400;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 footer {
