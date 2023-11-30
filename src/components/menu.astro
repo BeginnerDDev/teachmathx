@@ -1,0 +1,346 @@
+---
+interface Props {
+	temario_1?: string;
+	temario_2?: string;
+	temario_3?: string;
+	temario_4?: string;
+	temario_5?: string;
+	enlace?: string;
+	prev?: string;
+	home?: string;
+	next?: string;
+}
+
+const {
+	temario_1,
+	temario_2,
+	temario_3,
+	temario_4,
+	temario_5,
+	enlace,
+	prev,
+	home,
+	next,
+} = Astro.props;
+---
+
+<style lang="scss">
+	.nav {
+		position: fixed;
+		top: 0;
+		width: 330px;
+		height: 100vh;
+        background-color: #000;
+
+		.open {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 40px;
+			stroke: #fff;
+		}
+
+		&__container {
+			width: 285px;
+			height: 100%;
+			background: 
+                linear-gradient(180deg, rgb(0 0 0 / .8), rgb(0 0 0 / .7)),
+				url(../../public/bg.webp) no-repeat;
+			border-right: 1px solid #fff;
+		}
+
+		&__logo {
+			height: 130px;
+			padding-top: 10px;
+			display: flex;
+            flex-direction: column;
+			align-items: center;
+			gap: 25px;
+			border-bottom: 1px solid rgb(255 255 255 / 0.2);
+
+			.materia {
+				font-size: 14px;
+                color: #fff;
+			}
+
+            .logo {
+                display: flex;
+                align-items: center;
+                color: white;
+
+                .tmx {
+                    font-size: 22px;
+                    font-weight: 500;
+                }
+            }
+		}
+
+		&__icons {
+            margin-block: 10px;
+			height: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+            gap: 25px;
+
+			svg {
+                width: 30px;
+                height: 30px;
+                transition: stroke 350ms;
+                stroke: rgb(255 255 255 / .7);
+                &:hover {
+                    stroke: rgb(255 255 255);
+                }
+			}
+		}
+
+        .guia {
+            padding-left: 7px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #fff;
+        }
+
+		li {
+			display: flex;
+			flex-direction: column;
+			a {
+				display: flex;
+				align-items: center;
+				gap: 7px;
+                margin-top: 20px;
+                margin-left: 20px;
+			}
+		}
+	}
+</style>
+
+<nav class="nav">
+	<svg
+		class="open"
+		xmlns="http://www.w3.org/2000/svg"
+		class="icon icon-tabler icon-tabler-arrow-bar-right"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		stroke-width="2"
+		stroke="currentColor"
+		fill="none"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+			d="M20 12l-10 0"></path><path d="M20 12l-4 4"></path><path
+			d="M20 12l-4 -4"></path><path d="M4 4l0 16"></path></svg
+	>
+	<div class="nav__container">
+		<div class="nav__logo">
+			<span class="materia">Cálculo Diferencial</span>
+            <div class="logo">
+                <img src="logo.svg" alt="">
+                <span class="tmx">TeachMathX</span>
+            </div>
+		</div>
+		<div class="nav__icons">
+			<a href={prev}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="icon icon-tabler icon-tabler-arrow-narrow-left"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					stroke-width="2"
+					stroke="currentColor"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					><path stroke="none" d="M0 0h24v24H0z" fill="none"
+					></path><path d="M5 12l14 0"></path><path d="M5 12l4 4"
+					></path><path d="M5 12l4 -4"></path></svg
+				>
+			</a>
+			<a href={home}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="icon icon-tabler icon-tabler-home"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					stroke-width="2"
+					stroke="currentColor"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					><path stroke="none" d="M0 0h24v24H0z" fill="none"
+					></path><path d="M5 12l-2 0l9 -9l9 9l-2 0"></path><path
+						d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"
+					></path><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"
+					></path></svg
+				>
+			</a>
+			<a href={next}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="icon icon-tabler icon-tabler-arrow-narrow-right"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					stroke-width="2"
+					stroke="currentColor"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					><path stroke="none" d="M0 0h24v24H0z" fill="none"
+					></path><path d="M5 12l14 0"></path><path d="M15 16l4 -4"
+					></path><path d="M15 8l4 4"></path></svg
+				>
+			</a>
+		</div>
+		<ul class="nav__content">
+			<li class="nav__item">
+				<div class="guia">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="icon icon-tabler icon-tabler-folder"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						stroke-width="2"
+						stroke="currentColor"
+						fill="none"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						><path stroke="none" d="M0 0h24v24H0z" fill="none"
+						></path><path
+							d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"
+						></path></svg
+					>
+					<span>Guía de estudio</span>
+				</div>
+
+				<ul class="sub">
+					<li class="sub__item">
+						<a href="#" class="sub__link">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-file"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									stroke="none"
+									d="M0 0h24v24H0z"
+									fill="none"></path><path
+									d="M14 3v4a1 1 0 0 0 1 1h4"></path><path
+									d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+								></path></svg
+							>
+							<span>{temario_1}</span>
+						</a>
+					</li>
+					<li class="sub__item">
+						<a href="#" class="sub__link">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-file"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									stroke="none"
+									d="M0 0h24v24H0z"
+									fill="none"></path><path
+									d="M14 3v4a1 1 0 0 0 1 1h4"></path><path
+									d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+								></path></svg
+							>
+							<span>{temario_2}</span>
+						</a>
+					</li>
+					<li class="sub__item">
+						<a href="#" class="sub__link">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-file"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									stroke="none"
+									d="M0 0h24v24H0z"
+									fill="none"></path><path
+									d="M14 3v4a1 1 0 0 0 1 1h4"></path><path
+									d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+								></path></svg
+							>
+							<span>{temario_3}</span>
+						</a>
+					</li>
+					<li class="sub__item">
+						<a href="#" class="sub__link">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-file"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									stroke="none"
+									d="M0 0h24v24H0z"
+									fill="none"></path><path
+									d="M14 3v4a1 1 0 0 0 1 1h4"></path><path
+									d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+								></path></svg
+							>
+							<span>{temario_4}</span>
+						</a>
+					</li>
+					<li class="sub__item">
+						<a href="#" class="sub__link">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-file"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									stroke="none"
+									d="M0 0h24v24H0z"
+									fill="none"></path><path
+									d="M14 3v4a1 1 0 0 0 1 1h4"></path><path
+									d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+								></path></svg
+							>
+							<span>{temario_5}</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>

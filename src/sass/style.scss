@@ -1,22 +1,17 @@
 @use 'global';
+@use 'variables';
 
 
-.header {
-    width: 100%;
+
+
+footer {
+    width: calc(100% - 330px);
     height: 80px;
-    padding-inline: 20px;
+    margin-left: 330px;
+    @include variables.font('Oswald');
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    color: whitesmoke;
+    justify-content: center;
     background: #000;
-
-    
-    .nav {
-
-        &__container {
-            display: flex;
-            gap: 20px;
-        }
-    }
+    color: white;
 }

@@ -1,9 +1,11 @@
 ---
+import Footer from '../components/footer.astro';
 import Layout from '../components/layout.astro';
 import '../css/style.css'
 ---
 
 <style lang="scss">
+	@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Raleway:wght@200;300;400;500&display=swap");
 	body {
 		background-color: #202020;
 	}
@@ -11,7 +13,7 @@ import '../css/style.css'
 		position: relative;
 		top: 0;
 		width: 100%;
-		height: calc(100vh - 160px);
+		height: calc(100vh - 80px);
 		svg {
 			position: absolute;
 			top: 50%;
@@ -102,6 +104,16 @@ import '../css/style.css'
 			}
 		}
 	}
+	footer {
+		width: 100%;
+		height: 80px;
+		font-family: 'Oswald', sans-serif;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #000;
+		color: white;
+	}
 </style>
 
 <Layout pageTitle="404">
@@ -172,4 +184,6 @@ import '../css/style.css'
 			</div>
 		</div>
 	</section>
+
+	<Footer/>
 </Layout>

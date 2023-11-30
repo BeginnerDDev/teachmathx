@@ -1,10 +1,28 @@
 ---
+import Footer from "../components/footer.astro";
 import Layout from "../components/layout.astro";
+import Menu from "../components/menu.astro";
+
 ---
 
 <Layout 
 pageTitle="Funciones"
 pageDescription=""
 >
-    <h1>Funciones</h1>
+    <Menu 
+        temario_1="Conceptos"
+        temario_2="Tipos"
+        temario_3="Características"
+        temario_4="Ejemplos"
+        temario_5="Aplicación"
+        prev="/"
+        home="/"
+        next="limites"
+
+    />
+
+    <header class="header"></header>
+
+    <Footer/>
+    
 </Layout>

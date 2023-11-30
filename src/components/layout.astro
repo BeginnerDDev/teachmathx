@@ -27,32 +27,6 @@ import '../css/style.css'
 </head>
 <body>
 
-    <header class="header">
-        <div class="header__logo">
-            <a href="/">
-                <span>TeachMathX</span>
-            </a>
-        </div>
-        <nav class="nav">
-            <ul class="nav__container">
-                <li class="nav__item"><a href="funciones" class="nav__link nav__link--active">Funciones</a></li>
-                <li class="nav__item"><a href="limites" class="nav__link">Límites</a></li>
-                <li class="nav__item"><a href="continuidad" class="nav__link">Continuidad</a></li>
-                <li class="nav__item"><a href="derivadas" class="nav__link">Derivadas</a></li>
-                <li class="nav__item"><a href="nosotros" class="nav__link">Nosotros</a></li>
-            </ul>
-        </nav>
-
-    </header>
-
-    <main>
-        <slot />
-    </main>
-    
-    <footer>
-        <p>
-            Copyright &copy; {year} | Todos los Derechos Reservdados - {nameWebSite}
-        </p>
-    </footer>
+    <slot />
 </body>
 </html>

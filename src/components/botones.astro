@@ -1,0 +1,208 @@
+---
+interface Props {
+	titleA?: string;
+	titleS?: string;
+	title?: string;
+	enlace?: string;
+	enlaceI?: string;
+	enlaceA?: string;
+	enlaceS?: string;
+}
+
+const { titleA, titleS, title, enlace, enlaceI, enlaceA, enlaceS } =
+	Astro.props;
+---
+
+<style>
+	:root {
+		--theme-color: #e34f26;
+	}
+	.navpages {
+		--bgcolor: #222;
+		--offset: 16px;
+		font-family: sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 0.25px;
+		margin-top: 1rem;
+		font-size: 0.95rem;
+	}
+
+	@supports (width: fit-content) {
+		.navpages {
+			width: -moz-fit-content;
+			width: fit-content;
+			margin: 1rem auto auto;
+		}
+	}
+
+	.navpages a {
+		background: var(--bgcolor);
+		color: #fff;
+		align-items: center;
+		height: 32px;
+		margin: 0.25em -0.3em;
+		padding: 0 1.8em;
+		font-weight: 600;
+		text-decoration: none;
+		transition:
+			background 0.25s,
+			color 0.25s;
+		display: inline-flex;
+		position: relative;
+	}
+
+	.navpages a.current {
+		--bgcolor: var(--theme-color);
+		color: #000;
+	}
+
+	.navpages:hover a {
+		--bgcolor: #222;
+		color: #fff;
+	}
+
+	.navpages:hover a:hover {
+		--bgcolor: var(--theme-color);
+		color: #111;
+	}
+
+	.navpages .top {
+		text-align: center;
+	}
+
+	.navpages .top a {
+		-webkit-clip-path: polygon(0 100%, 50% 0, 100% 100%);
+		clip-path: polygon(0 100%, 50% 0, 100% 100%);
+		background: #444;
+		height: 1.25rem;
+		margin-bottom: 1rem;
+		padding: 0 2rem;
+	}
+
+	.navpages .top a:hover {
+		background: var(--theme-color);
+	}
+
+	.navpages .prev-next {
+		--prev-arrow: polygon(
+			0 50%,
+			var(--offset) 100%,
+			100% 100%,
+			calc(100% - var(--offset)) 50%,
+			100% 0,
+			var(--offset) 0%
+		);
+		--diamond-arrow: polygon(
+			0 50%,
+			var(--offset) 100%,
+			calc(100% - var(--offset)) 100%,
+			100% 50%,
+			calc(100% - var(--offset)) 0,
+			var(--offset) 0%
+		);
+		--next-arrow: polygon(
+			0 0,
+			var(--offset) 50%,
+			0 100%,
+			calc(100% - var(--offset)) 100%,
+			100% 50%,
+			calc(100% - var(--offset)) 0
+		);
+		--prev-next-width: 270px;
+		--current-width: 290px;
+	}
+
+	.navpages .prev-next {
+		flex-direction: row;
+		align-items: center;
+		align-content: center;
+		display: flex;
+	}
+
+	@media (max-width: 800px) {
+		.navpages .prev-next {
+			flex-direction: column;
+			align-items: center;
+			display: flex;
+		}
+	}
+
+	.navpages .prev-next a:not(.current):first-child {
+		clip-path: var(--prev-arrow);
+	}
+
+	.navpages .prev-next a.current {
+		--dark-color: #0009;
+		clip-path: var(--diamond-arrow);
+		z-index: 5;
+		letter-spacing: -1px;
+		width: var(--current-width);
+		margin: 0 1.5rem;
+		padding: 0 2rem;
+		font-weight: 650;
+		transform: scale(1.2);
+	}
+
+	@media (max-width: 850px) {
+		.navpages .prev-next a.current {
+			padding: initial;
+			margin: initial;
+		}
+	}
+
+	.navpages .prev-next a.current ~ a {
+		clip-path: var(--next-arrow);
+	}
+
+	.navpages .prev-next a {
+		text-wrap: balance;
+		width: var(--prev-next-width);
+		letter-spacing: -0.5px;
+		justify-content: center;
+		margin: 0;
+		padding: 0 2rem;
+	}
+</style>
+
+<nav class="navpages">
+	<div class="top">
+		<a href={enlaceI}>Volver al Inicio</a>
+	</div>
+	<div class="prev-next">
+		<a id="anteriorBtn" href={enlaceA}>{titleA}</a>
+		<a class="current" href={enlace}>{title}</a>
+		<a id="siguienteBtn" href={enlaceS}>{titleS}</a>
+	</div>
+</nav>
+
+
+<!-- <script>
+// Obtener la referencia a los elementos del DOM
+const anteriorBtn = document.getElementById('anteriorBtn');
+const siguienteBtn = document.getElementById('siguienteBtn');
+
+// Nombre de la página actual
+const paginaActual = window.location.pathname.split('/').pop();
+
+// Definir las páginas
+const paginas = ['index.astro', 'funciones.astro', 'limites.astro', 'continuidad.astro', 'derivadas.astro'];
+
+// Encontrar el índice de la página actual
+const indiceActual = paginas.indexOf(paginaActual);
+
+// Eventos para los botones
+anteriorBtn.onclick = function() {
+    // Calcular la página anterior
+    const paginaAnterior = paginas[indiceActual - 1] || paginas[paginas.length - 1];
+    // Redirigir a la página anterior
+    window.location.href = paginaAnterior;
+}
+
+siguienteBtn.onclick = function() {
+    // Calcular la página siguiente
+    const paginaSiguiente = paginas[indiceActual + 1] || paginas[0];
+    // Redirigir a la página siguiente
+    window.location.href = paginaSiguiente;
+}
+
+</script> -->
