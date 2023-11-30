@@ -164,7 +164,6 @@ import '../css/index.css';
 	<script>
 		const next = document.querySelector('.next');
 		const prev = document.querySelector('.prev');
-		const checkbox = document.getElementById('sliderCheckbox');
 
 		let interval;
 
@@ -200,7 +199,7 @@ import '../css/index.css';
 		}
 
 		function startAutoSlide() {
-			interval = setInterval(function () {
+			interval = setInterval( () => {
 				moveSlider('next');
 			}, 5000); // Cambia de slide cada 5 segundos
 		}
