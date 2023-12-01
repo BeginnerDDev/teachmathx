@@ -1,0 +1,367 @@
+@use 'global';
+
+$primary-color: rgb(192 81 255);
+$white-color: rgb(255 255 255);
+$bg-color: rgb(10 0 31);
+
+body {
+    background: $bg-color;
+    overflow: hidden;
+    color: $white-color;
+}
+
+// INICIO - Diseño principal
+
+.main {
+    min-height: 100vh;
+    background: linear-gradient(180deg, 
+        rgb(0 0 0 / .5), 
+        transparent, 
+        transparent), 
+        url(bgTest.webp) 
+        no-repeat top 
+        center/cover;
+    transition: 300ms;
+    
+    &.active {
+        filter: blur(20px);
+        pointer-events: none;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 10%;
+        background: transparent;
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+
+        .logo {
+
+            span {
+                font-size: 22px;
+                font-weight: 600;
+                color: $white-color;
+            }
+        }
+
+        .nav {
+
+            &__container {
+                display: flex;
+                gap: 33px;
+            }
+
+            &__item {
+                position: relative;
+                height: 50px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 3px;
+                    scale: 0;
+                    transition: scale 350ms, background 350ms;
+                    transform-origin: right;
+                    background: $primary-color;
+                }
+
+                &.active::before {
+                    scale: 1;
+                }
+
+                &:hover::before {
+                    scale: 1;
+                    transform-origin: left;
+                }
+
+                a {
+                    height: 100%;
+                    font-size: 15px;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    transition: color 350ms;
+
+                    &.active {
+                        color: $primary-color;
+                    }
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    //INICIO - Diseñando la parte del quizz
+
+    .container {
+        height: 100vh;
+        width: 200%;
+        display: flex;
+
+        .quiz-section {
+            position: relative;
+            //left: -50%;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $bg-color;
+            transition: 800ms ease-in-out;
+            transition-delay: 250ms;
+            z-index: 100;
+
+            &.active {
+                left: 0;
+            }
+
+            .quiz-box {
+                position: relative;
+                width: 500px;
+                padding: 20px 30px;
+                display: flex;
+                flex-direction: column;
+                background: transparent;
+                border: 2px solid $primary-color;
+
+                h2 {
+                    font-size: 32px;
+                    text-align: center;
+                    background: linear-gradient(45deg, transparent, $primary-color, transparent);
+                    border-radius: 6px;
+                }
+
+                .quiz-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-block: 20px;
+                    border-bottom: 2px solid $primary-color;
+                    margin-bottom: 30px;
+
+                    span {
+                        font-size: 17px;
+                        font-weight: 500;
+                    }
+
+                    .header-score {
+                        background: $primary-color;
+                        border-radius: 3px;
+                        padding: 7px;
+
+                    }
+                }
+
+                .question-text {
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+
+                .option-list {
+
+                    .option {
+                        width: 100%;
+                        padding: 12px;
+                        background: transparent;
+                        border: 2px solid rgb(255 255 255 / .2);
+                        border-radius: 4px;
+                        font-size: 17px;
+                        margin-block: 15px;
+                        cursor: pointer;
+                        transition: 300ms;
+
+                        &:hover {
+                            background: rgb(255 255 255 / .1);
+                            border-color: rgb(255 255 255 / .1);
+                        }
+                    }
+
+                }
+
+            }
+
+            .quiz-footer {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-top: 2px solid $primary-color;
+                padding-top: 20px;
+                margin-top: 30px;
+
+                .question-total {
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+
+                .next-btn {
+                    width: 100px;
+                    height: 45px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: rgb(255 255 255 / .3);
+                    background: rgb(255 255 255 / .1);
+                    border: 2px solid rgb(255 255 255 / .1);
+                    outline: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    pointer-events: none;
+                    transition: 500ms;
+
+                    &:hover {
+                        background: $primary-color;
+                        border-color: $primary-color;
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+
+    // FIN - Diseñando la parte del quizz
+
+
+    // CONTINUACIÓN - Diseño principal
+
+    .home {
+        width: 100%;
+        position: relative;
+        left: -50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__content {
+            max-width: 700px;
+            height: 400px;
+            padding-inline: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            border-radius: 7px;
+
+            h1 {
+                font-size: 65px;
+                font-weight: 700;
+                line-height: 2;
+                text-shadow: 0 0 10px rgb(0 0 0 / .3);
+            }
+
+            p {
+                font-size: 16px;
+                text-align: center;
+                text-shadow: 0 0 10px rgb(0 0 0 / .3);
+            }
+        }
+
+        &__btn {
+            margin-top: 50px;
+            width: 175px;
+            height: 50px;
+            font-size: 18px;
+            font-weight: 500;
+            color: $white-color;
+            border: none;
+            outline: none;
+            border-radius: 7px;
+            background: $primary-color;
+            cursor: pointer;
+            transition: background 350ms, color 350ms;
+
+            &:hover {
+                background: rgb(134, 56, 178);
+            }
+        }
+
+    }
+}
+
+// FIN - Diseño principal
+
+//! INICIO - Diseño del modal de aviso
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 600px;
+    padding: 30px;
+    backdrop-filter: blur(150px);
+    border-radius: 7px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 300ms;
+
+    h2 {
+        line-height: 3;
+        color: $primary-color;
+    }
+
+    &__info {
+        display: inline-block;
+        font-size: 17px;
+        font-family: 500;
+        line-height: 1.5;
+        margin-block: 4px;
+        color: $white-color;
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .btn__group {
+        margin-top: 25px;
+
+        font-size: 16px;
+        font-weight: 500;
+        display: flex;
+        gap: 25px;
+
+
+
+        .info__btn {
+            padding: 7px 25px;
+            border: none;
+            outline: none;
+            background: $primary-color;
+            color: $white-color;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: background 350ms;
+
+            &:hover {
+                background: rgb(134, 56, 178);
+            }
+        }
+
+        .exit-btn {
+            border: 2px solid $primary-color;
+            background: transparent;
+        }
+        
+        .continue-btn {
+            border: 2px solid $primary-color;
+            background: $primary-color;
+
+        }
+    }
+}
+
+//TODO - FIN - Diseño del modal de aviso

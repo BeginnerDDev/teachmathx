@@ -1,0 +1,108 @@
+---
+interface Props {
+	pageTitle?: string;
+	title?: string;
+	prueba?: string;
+}
+
+const { pageTitle, title, prueba } = Astro.props;
+
+import '../css/styleTest.css';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{pageTitle} | TeachMathX</title>
+	</head>
+	<body>
+		<main class="main">
+			<header class="header">
+				<div class="logo">
+					<a href="/">
+						<span>TeachMathX</span>
+					</a>
+				</div>
+
+				<nav class="nav">
+					<slot name="nav" />
+				</nav>
+			</header>
+
+			<div class="container">
+				<section class="quiz-section">
+					<div class="quiz-box">
+						<h2>TeachMathX Quiz</h2>
+						<div class="quiz-header">
+							<span>Prueba de {prueba}</span>
+							<span class="header-score">Puntuación: 0 / 10</span>
+						</div>
+
+						<h3 class="question-text">Si \(f(x) = 2x + 3\) <br> ¿Cuál es el valor de \(f(5)\)?</h3>
+
+                        <div class="option-list">
+                            <div class="option">
+                                <span>a) 8</span>
+                            </div>
+                        </div>
+                        <div class="option-list">
+                            <div class="option">
+                                <span>b) 13</span>
+                            </div>
+                        </div>
+                        <div class="option-list">
+                            <div class="option">
+                                <span>c) 15</span>
+                            </div>
+                        </div>
+                        <div class="option-list">
+                            <div class="option">
+                                <span>d) 23</span>
+                            </div>
+                        </div>
+
+                        <div class="quiz-footer">
+                            <span class="question-total">1 de 10 preguntas</span>
+                            <button class="next-btn">Siguiente</button>
+                        </div>
+					</div>
+				</section>
+
+				<section class="home">
+					<div class="home__content">
+						<h1>Prueba de <span>{title}</span></h1>
+						<p>
+							Bienvenido a la prueba de {title}, en la que pondrás
+							a prueba lo aprendido en el apartado de conceptos.
+							¡Suerte!
+						</p>
+						<button class="home__btn">Iniciar Prueba</button>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<div class="popup">
+			<h2>Aviso:</h2>
+			<span class="popup__info"
+				>La prueba consta de 10 preguntas, las cuales tienen un límite
+				de 20 segundos/u para responder. Una vez se cumpla el límite,
+				pasará automáticamente a la siguiente, haya sido completada o
+				no.</span
+			>
+			<div class="btn__group">
+				<button class="info__btn exit-btn">Salir de la prueba</button>
+				<a href="#" class="info__btn continue-btn">Continuar</a>
+			</div>
+		</div>
+
+		<script src="../js/test.js"></script>
+		<script
+			type="text/javascript"
+			async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
+		></script>
+	</body>
+</html>
