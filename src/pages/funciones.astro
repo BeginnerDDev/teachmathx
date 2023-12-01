@@ -1,28 +1,44 @@
 ---
-import Footer from "../components/footer.astro";
-import Layout from "../components/layout.astro";
-import Menu from "../components/menu.astro";
-
+import Header from '../components/header.astro';
+import Layout from '../components/layout.astro';
+import Menu from '../components/menu.astro';
 ---
 
-<Layout 
-pageTitle="Funciones"
-pageDescription=""
->
-    <Menu 
-        temario_1="Conceptos"
-        temario_2="Tipos"
-        temario_3="Características"
-        temario_4="Ejemplos"
-        temario_5="Aplicación"
-        prev="/"
-        home="/"
-        next="limites"
+<Layout pageTitle="Funciones" pageDescription="">
+	<Menu
+		temario_1="¿Qué son?"
+		temario_2="Tipos"
+		temario_3="Características"
+		temario_4="Ejemplos"
+		temario_5="Aplicación"
+		prev="/"
+		home="/"
+		next="limites"
+	/>
 
-    />
+	<Header title="Funciones" />
 
-    <header class="header"></header>
-
-    <Footer/>
-    
+	<div slot="main">
+		<section class="content">
+			<p class="introduccion">
+                Las funciones matemáticas son uno de esos temas que marcan el inicio de las matemáticas “más serias”. Muchos estudiantes suelen tener problemas con estas y es que con uno de esos conceptos que marcan un antes y un después en la asignatura de matemáticas. 
+			</p>
+			<div class="conceptos">
+				<h2 class="title">¿Qué son las funciones?</h2>
+				<p class="desc">
+					Las funciones matemáticas pueden parecer algo muy  complejo, sin embargo, se trata de un concepto no muy difícil de entender. Una función matemática no es más que la <strong>representación matemática de la relación que existe entre dos variables</strong>. Esto quiere decir que el valor de una de las variables depende de la otra. 
+				</p>
+                <br>
+                <p class="desc">
+                    Aplicar una función sobre un valor no es más que sustituir este por una de las variables de la función, la variable <span>\(x\)</span> o variable dependiente, para obtener el valor de la variable Y o variable independiente. La aplicación de una función sobre un valor <span>\(x\)</span> se representa como <span>\(f(x)\)</span> y da como resultado el valor de Y que se relaciona con el valor <span>\(x\)</span> según la función <span>\(f\)</span>. 
+                </p>
+			</div>
+            <picture class="content__image">
+                <img src="PolygonsFunction.svg" alt="">
+            </picture>
+		</section>
+        <section class="content">
+            
+        </section>
+	</div>
 </Layout>

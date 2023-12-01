@@ -1,10 +1,26 @@
 ---
-import Layout from "../components/layout.astro";
+import Header from '../components/header.astro';
+import Layout from '../components/layout.astro';
+import Menu from '../components/menu.astro';
+
 ---
 
-<Layout 
-pageTitle="Derivadas"
-pageDescription=""
->
-    <h1>Derivadas</h1>
+<Layout pageTitle="Derivadas" pageDescription="">
+	<Menu
+		temario_1="Conceptos"
+		temario_2="Tipos"
+		temario_3="Características"
+		temario_4="Ejemplos"
+		temario_5="Aplicación"
+		prev="continuidad"
+		home="/"
+		next="nosotros"
+	/>
+
+	<Header title="Derivadas" />
+
+    <section slot="main">
+        Estoy en Derivadas!!!
+    </section>
+
 </Layout>

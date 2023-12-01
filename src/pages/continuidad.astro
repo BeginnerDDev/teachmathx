@@ -1,10 +1,27 @@
 ---
-import Layout from "../components/layout.astro";
+import Footer from '../components/footer.astro';
+import Header from '../components/header.astro';
+import Layout from '../components/layout.astro';
+import Menu from '../components/menu.astro';
+
 ---
 
-<Layout 
-pageTitle="Continuidad" 
-pageDescription="Sobre la continuidad"
->
-    <h1>Continuidad</h1>
+<Layout pageTitle="Continuidad" pageDescription="">
+	<Menu
+		temario_1="Conceptos"
+		temario_2="Tipos"
+		temario_3="Características"
+		temario_4="Ejemplos"
+		temario_5="Aplicación"
+		prev="limites"
+		home="/"
+		next="derivadas"
+	/>
+
+	<Header title="Continuidad" />
+
+    <section slot="main">
+        Estoy en Continuidad!!!
+    </section>
+
 </Layout>

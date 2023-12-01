@@ -1,32 +1,48 @@
 ---
 interface Props {
-    pageTitle?: string;
-    nameWebSite?: string;
-    pageDescription?: string;
+	pageTitle?: string;
+	nameWebSite?: string;
+	pageDescription?: string;
 }
 
 //Props para automatizar un poquito más.
-const {pageTitle , nameWebSite = 'TeachMathX', pageDescription} = Astro.props
+const { pageTitle, nameWebSite = 'TeachMathX', pageDescription } = Astro.props;
 
 // Año dinámico para el footer.
-const CurrentDate = new Date()
-let year = CurrentDate.getFullYear()
+const CurrentDate = new Date();
+let year = CurrentDate.getFullYear();
 
-import '../css/style.css'
+import '../css/style.css';
 ---
 
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content={pageDescription}>
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle} | {nameWebSite}</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={pageDescription} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle} | {nameWebSite}</title>
+	</head>
+	<body>
+		<slot />
 
-    <slot />
-</body>
+		<main class="container">
+			<slot name="main" />
+		</main>
+
+		<footer>
+			<p>
+				Copyright &copy; {year} | Todos los Derechos Reservdados - {
+					nameWebSite
+				}
+			</p>
+		</footer>
+
+		<script
+			type="text/javascript"
+			async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
+		></script>
+	</body>
 </html>

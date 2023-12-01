@@ -1,10 +1,31 @@
 ---
+import Header from "../components/header.astro";
 import Layout from "../components/layout.astro";
+import Menu from "../components/menu.astro";
+
 ---
 
 <Layout 
 pageTitle="Nosotros"
 pageDescription=""
 >
-    <h1>Nosotros</h1>
+    <Menu 
+        temario_1="Conceptos"
+        temario_2="Tipos"
+        temario_3="Características"
+        temario_4="Ejemplos"
+        temario_5="Aplicación"
+        prev="derivadas"
+        home="/"
+
+    />
+
+    <Header title="Nosotros"/>
+
+    <section slot="main">
+        Estoy en Nosotros!!!
+    </section>
+
+    
+    
 </Layout>
