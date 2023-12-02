@@ -31,14 +31,29 @@ const {
 		width: 330px;
 		height: 100vh;
         background-color: #000;
+		left: 0;
+		transition: left 500ms;
+
+		&.active {
+			left: -285px;
+		}
 
 		.open {
 			position: absolute;
-			top: 0;
+			top: 10px;
 			right: 0;
 			width: 40px;
 			stroke: #fff;
+			transform: rotateZ(-180deg);
+			transition: transform 625ms;
+			cursor: pointer;
+
+			&.active {
+				transform: rotateZ(0deg);
+			}
 		}
+
+
 
 		&__container {
 			width: 285px;

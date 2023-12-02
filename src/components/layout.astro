@@ -31,7 +31,7 @@ import '../css/style.css';
 			<slot name="main" />
 		</main>
 
-		<footer>
+		<footer class="footer">
 			<p>
 				Copyright &copy; {year} | Todos los Derechos Reservdados - {
 					nameWebSite
@@ -44,5 +44,23 @@ import '../css/style.css';
 			async
 			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
 		></script>
+		<script>
+
+			const header = document.querySelector('.header');
+			const menu = document.querySelector('.nav');
+			const showMenu = document.querySelector('.open');
+			const container = document.querySelector('.container');
+			const footer = document.querySelector('.footer');
+
+		
+			showMenu.addEventListener('click', () =>{
+				menu.classList.toggle('active')
+				showMenu.classList.toggle('active')
+				container.classList.toggle('active')
+				header.classList.toggle('active')
+				footer.classList.toggle('active')
+			})
+		
+		</script>
 	</body>
 </html>
