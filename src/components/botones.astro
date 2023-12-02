@@ -18,8 +18,8 @@ const { titleA, titleS, title, enlace, enlaceI, enlaceA, enlaceS } =
 		--theme-color: #e34f26;
 	}
 	.container-a{
-		width: auto;
-		height: auto;
+		display: flex;
+		margin: auto;
 	}
 	
 
@@ -34,8 +34,9 @@ const { titleA, titleS, title, enlace, enlaceI, enlaceA, enlaceS } =
 		position: absolute;
 		top: 200px;
 		left: 450px;
-		
+		z-index: 988;
 	}
+
 
 	@supports (width: fit-content) {
 		.navpages {
@@ -198,7 +199,7 @@ const siguienteBtn = document.getElementById('siguienteBtn');
 const paginaActual = window.location.pathname.split('/').pop();
 
 // Definir las páginas
-const paginas = ['/', 'funciones', 'limites', 'continuidad', 'derivadas'];
+const paginas = ['/', 'funciones', 'limites', 'continuidad', 'derivadas', 'testFunciones', 'testLimites', 'testContinuidad', 'testDerivadas'];
 
 // Encontrar el índice de la página actual
 const indiceActual = paginas.indexOf(paginaActual);
