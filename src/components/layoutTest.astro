@@ -32,43 +32,8 @@ import '../css/styleTest.css';
 			</header>
 
 			<div class="container">
-				<section class="quiz-section">
-					<div class="quiz-box">
-						<h2>TeachMathX Quiz</h2>
-						<div class="quiz-header">
-							<span>Prueba de {prueba}</span>
-							<span class="header-score">Puntuación: 0 / 10</span>
-						</div>
-
-						<h3 class="question-text">Si \(f(x) = 2x + 3\) <br> ¿Cuál es el valor de \(f(5)\)?</h3>
-
-                        <div class="option-list">
-                            <div class="option">
-                                <span>a) 8</span>
-                            </div>
-                        </div>
-                        <div class="option-list">
-                            <div class="option">
-                                <span>b) 13</span>
-                            </div>
-                        </div>
-                        <div class="option-list">
-                            <div class="option">
-                                <span>c) 15</span>
-                            </div>
-                        </div>
-                        <div class="option-list">
-                            <div class="option">
-                                <span>d) 23</span>
-                            </div>
-                        </div>
-
-                        <div class="quiz-footer">
-                            <span class="question-total">1 de 10 preguntas</span>
-                            <button class="next-btn">Siguiente</button>
-                        </div>
-					</div>
-				</section>
+				
+                <slot name="quiz"/>
 
 				<section class="home">
 					<div class="home__content">
@@ -98,7 +63,10 @@ import '../css/styleTest.css';
 			</div>
 		</div>
 
-		<script src="../js/test.js"></script>
+		<script src="../js/funciones.js"></script>
+		<script src="../js/limites.js"></script>
+		<script src="../js/continuidad.js"></script>
+		<script src="../js/derivadas.js"></script>
 		<script
 			type="text/javascript"
 			async

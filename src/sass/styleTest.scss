@@ -112,8 +112,8 @@ body {
 
         .quiz-section {
             position: relative;
-            //left: -50%;
-            left: 0;
+            left: -50%;
+            //left: 0;
             width: 100%;
             display: flex;
             align-items: center;
@@ -135,6 +135,17 @@ body {
                 flex-direction: column;
                 background: transparent;
                 border: 2px solid $primary-color;
+                opacity: 0;
+                pointer-events: none;
+                scale: .9;
+
+                &.active {
+                    opacity: 1;
+                    pointer-events: auto;
+                    scale: 1;
+                    transition: 1s;
+                    transition-delay: 1s;
+                }
 
                 h2 {
                     font-size: 32px;
@@ -216,7 +227,6 @@ body {
                     outline: none;
                     border-radius: 6px;
                     cursor: pointer;
-                    pointer-events: none;
                     transition: 500ms;
 
                     &:hover {

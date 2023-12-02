@@ -8,6 +8,7 @@ const {title} = Astro.props
 
 <style lang="scss">
     .header {
+        position: relative;
         width: calc(100% - 330px);
         height: 240px;
         margin-left: 330px;
@@ -19,6 +20,15 @@ const {title} = Astro.props
         display: flex;
         align-items: center;
         justify-content: center;
+        left: 0;
+        transition: all 500ms;
+
+
+
+        &.active {
+            width: calc(100% - 45px);
+            left: -285px;
+        }
 
 
         h1 {

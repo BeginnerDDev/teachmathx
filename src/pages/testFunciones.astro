@@ -1,18 +1,67 @@
 ---
-import LayoutTest from "../components/layoutTest.astro";
+import LayoutTest from '../components/layoutTest.astro';
 ---
 
-<LayoutTest 
-pageTitle="Test Funciones"
-title="Funciones"
-prueba="funciones"
->
-    
+<LayoutTest pageTitle="Test Funciones" title="Funciones" prueba="funciones">
+	<ul class="nav__container" slot="nav">
+		<li class="nav__item active">
+			<a href="testFunciones" class="nav__link active">Test Funciones</a>
+		</li>
+		<li class="nav__item">
+			<a href="testLimites" class="nav__link">Test Límites</a>
+		</li>
+		<li class="nav__item">
+			<a href="testContinuidad" class="nav__link">Test Continuidad</a>
+		</li>
+		<li class="nav__item">
+			<a href="testDerivadas" class="nav__link">Test Derivadas</a>
+		</li>
+	</ul>
 
-    <ul class="nav__container" slot="nav">
-        <li class="nav__item active"><a href="testFunciones" class="nav__link active">Test Funciones</a></li>
-        <li class="nav__item"><a href="testLimites" class="nav__link">Test Límites</a></li>
-        <li class="nav__item"><a href="testContinuidad" class="nav__link">Test Continuidad</a></li>
-        <li class="nav__item"><a href="testDerivadas" class="nav__link">Test Derivadas</a></li>
-    </ul>
+	<section class="quiz-section" slot="quiz">
+		<div class="quiz-box">
+			<h2>TeachMathX Quiz</h2>
+			<div class="quiz-header">
+				<span>Prueba de funciones</span>
+				<span class="header-score">Puntuación: 0 / 10</span>
+			</div>
+
+            <img class="question-image" src="" alt="hola">
+			<h3 class="question-text">
+				Si \(f(x) = 2x + 3\) <br /> ¿Cuál es el valor de \(f(5)\)?
+			</h3>
+
+			<div class="option-list">
+				<div class="option">
+					<span>a) 8</span>
+				</div>
+			</div>
+			<div class="option-list">
+				<div class="option">
+					<span>b) 13</span>
+				</div>
+			</div>
+			<div class="option-list">
+				<div class="option">
+					<span>c) 15</span>
+				</div>
+			</div>
+			<div class="option-list">
+				<div class="option">
+					<span>d) 23</span>
+				</div>
+			</div>
+
+			<div class="quiz-footer">
+				<span class="question-total">1 de 10 preguntas</span>
+				<button class="next-btn">Siguiente</button>
+			</div>
+		</div>
+	</section>
+
+    <script
+    type="text/javascript"
+    async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
+></script>
 </LayoutTest>
