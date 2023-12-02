@@ -11,12 +11,19 @@ const { enlaceimg, iframe, titleC, titleD, descripcion } = Astro.props;
 ---
 
 <style>
-	/* Estilo para ocultar el modal por defecto */
 
+	#openModalBtn{
+		width: 100px;
+		height: auto;
+	}
+
+	
+
+	/* Estilo para ocultar el modal por defecto */
 	.modal {
 		display: none;
 		position: fixed;
-		z-index: 1;
+		z-index: 999;
 		left: 0;
 		top: 0;
 		width: 100%;
@@ -51,14 +58,17 @@ const { enlaceimg, iframe, titleC, titleD, descripcion } = Astro.props;
 	}
 
 	/* Estilo para el contenedor de video y descripción */
-
 	.video-container {
 		display: flex;
 		justify-content: space-between;
 	}
 
-	/* Estilo para la descripción al lado del video */
+	.video-container iframe{
+		width: 560px;
+		height: 315px;
+	}
 
+	/* Estilo para la descripción al lado del video */
 	.description {
 		flex: 1;
 		padding-left: 20px;
@@ -66,7 +76,6 @@ const { enlaceimg, iframe, titleC, titleD, descripcion } = Astro.props;
 	}
 
 	/* Estilo para la descripción */
-
 	.description h2 {
 		margin-bottom: 10px;
 		color: #000;
@@ -85,7 +94,8 @@ const { enlaceimg, iframe, titleC, titleD, descripcion } = Astro.props;
 				<div class="modal-content">
 					<span id="closeModalBtn" class="close">&times;</span>
 					<div class="video-container">
-						{iframe}
+						<iframe src={iframe} ></iframe>
+					
 						<div class="description">
 							<h2>{titleD}</h2>
 							<p>{descripcion}</p>
@@ -96,15 +106,8 @@ const { enlaceimg, iframe, titleC, titleD, descripcion } = Astro.props;
 			<h3>{titleC}</h3>
 		</div>
 	</div>
-
-	<iframe
-		width="560"
-		height="315"
-		src="https://www.youtube.com/embed/86awpOnnOhE?si=XilFC95ciVUPLTTW"
-		title="YouTube video player"
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		allowfullscreen></iframe>
+</div>
+	
 
 	<script>
 		// Obtener referencias a elementos del DOM
@@ -129,4 +132,4 @@ const { enlaceimg, iframe, titleC, titleD, descripcion } = Astro.props;
 			}
 		};
 	</script>
-</div>
+

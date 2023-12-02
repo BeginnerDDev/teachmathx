@@ -71,7 +71,7 @@ a {
 
 .container {
   width: calc(100% - 330px);
-  min-height: 100vh;
+  /* min-height: 100vh; */
   margin-left: 330px;
   background: linear-gradient(360deg, rgb(18, 18, 18), rgb(18, 18, 18), rgb(20, 10, 10));
   color: rgb(240, 240, 240);
