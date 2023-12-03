@@ -1,160 +1,318 @@
 ---
 interface Props {
-	enlaceimg?: string;
-	iframe?: any;
-	titleC?: string;
-	titleD?: string;
-	descripcion?: string;
+	img1?: string;
+	img2?: string;
+	img3?: string;
+	iframe1?: any;
+	iframe2?: any;
+	iframe3?: any;
+	title1?: string;
+	title2?: string;
+	title3?: string;
+	titleSeccion?: string
+	descripcion1?: string;
+	descripcion2?: string;
+	descripcion3?: string;
+	descripcionSeccion?: string;
 }
 
-const { enlaceimg, iframe, titleC, titleD, descripcion } = Astro.props;
+const {img1, img2, img3, iframe1, iframe2, iframe3, title1, title2, title3, titleSeccion, descripcion1, descripcion2, descripcion3, descripcionSeccion} = Astro.props;
 ---
 
 <style>
-
-.contenido-video {
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		padding: 15px;
-	}
-
-	.iframe-video {
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.iframe-video h3 {
-		margin-left: 20px;
-	}
-
-	.iframe-video img {
-		width: 100px;
-		height: 70px;
-	}
-
-	.description h2:hover {
-		border-bottom: 2px solid black;
-		cursor: default;
-		
-	}
+	:root {
+  --pad: clamp(1rem, 4vw, 4rem);
+}
 
 
-	/* Estilo para ocultar el modal por defecto */
-	.modal {
-		display: none;
-		position: fixed;
-		z-index: 999;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		overflow: auto;
-		background-color: rgba(0, 0, 0, 0.7);
-	}
 
-	/* Estilo para el contenido del modal */
+section h2 {
+  letter-spacing: -1px;
+  text-shadow: 0 0 6px #fffa;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
 
-	.modal-content {
-		margin: 15% auto;
-		padding: 20px;
-		width: 70%;
-		background-color: #fefefe;
-	}
+.wrapper {
+  padding: 1rem var(--pad);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 80%;
+  max-width: 80vw;
+  margin: auto;
+  display: flex;
+}
 
-	/* Estilo para el botón de cerrar */
+.column {
+  flex-direction: column;
+  align-items: center;
+}
 
-	.close {
-		color: #aaa;
-		float: right;
-		font-size: 28px;
-		font-weight: bold;
-	}
+section .list {
+  flex-wrap: row;
+  gap: 1em;
+  display: inline-flex;
+}
 
-	.close:hover,
-	.close:focus {
-		color: black;
-		text-decoration: none;
-		cursor: pointer;
-	}
+.list {
+  justify-content: center;
+}
 
-	/* Estilo para el contenedor de video y descripción */
-	.video-container {
-		display: flex;
-		justify-content: space-between;
-	}
+section .list img {
+  object-view-box: inset(0%);
+  object-fit: cover;
+  border: 6px solid #fff;
+  width: 320px;
+  max-width: 100%;
+  height: 180px;
+  transition: all 0.5s;
+}
 
-	.video-container iframe{
-		width: 560px;
-		height: 315px;
-	}
 
-	/* Estilo para la descripción al lado del video */
-	.description {
-		flex: 1;
-		padding-left: 20px;
-		/* Ajusta el espaciado según tus preferencias */
-	}
+section .list img:hover {
+  object-view-box: inset(10%);
+  border-color: indigo;
+}
 
-	/* Estilo para la descripción */
-	.description h2 {
-		margin-bottom: 10px;
-		color: #000;
-		text-align: center;
-	}
 
-	.description p {
-		color: #000;
-	}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.modal-content {
+  margin: 15% auto;
+  padding: 20px;
+  width: 70%;
+  max-width: 60vw; 
+  background-color: #fefefe;
+}
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.video-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-container iframe{
+  width: 560px;
+  height: 315px;
+}
+
+
+.description {
+  flex: 1;
+  padding-left: 20px;
+
+}
+
+.description h2 {
+  margin-bottom: 10px;
+  color: #000;
+  text-align: center;
+}
+
+.description p {
+  color: #000;
+}
 
 </style>
 
-<div class="video">
-	<div class="contenido-video">
-		<div class="iframe-video">
-			<img id="openModalBtn" src={enlaceimg} alt="Abrir Modal" />
-			<div id="myModal" class="modal">
-				<div class="modal-content">
-					<span id="closeModalBtn" class="close">&times;</span>
-					<div class="video-container">
-						<iframe src={iframe} ></iframe>
-					
-						<div class="description">
-							<h2>{titleD}</h2>
-							<p>{descripcion}</p>
+
+<section class="bg">
+	<div class="wrapper column">
+		<h2>{titleSeccion}</h2>
+		<p>
+			{descripcionSeccion}
+		</p>
+
+		<div class="list">
+			<div class="video">
+				<div class="contenido-video">
+					<div class="iframe-video">
+						<img
+							id="openModalBtn"
+							src={img1}
+							alt="¡Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS!"
+						/>
+						<div id="myModal" class="modal">
+							<div class="modal-content">
+								<span id="closeModalBtn" class="close">&times;</span>
+								<div class="video-container">
+									<iframe
+										width="560"
+										height="315"
+										src={iframe1}
+										title="¡Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS!"
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+										allowfullscreen
+									></iframe>
+
+									<div class="description">
+										<h2>{title1}</h2>
+										<p>
+											{descripcion1}
+										</p>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<h3>{titleC}</h3>
+
+		<div class="list">
+			<div class="video">
+				<div class="contenido-video">
+					<div class="iframe-video">
+						<img
+							id="openModalBtn2"
+							src={img2}
+							alt="¡Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS!"
+						/>
+						<div id="myModal2" class="modal">
+							<div class="modal-content">
+								<span id="closeModalBtn2" class="close">&times;</span>
+								<div class="video-container">
+									<iframe
+										width="560"
+										height="315"
+										src={iframe2}
+										title="¡Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS!"
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+										allowfullscreen
+									></iframe>
+
+									<div class="description">
+										<h2>{title2}</h2>
+										<p>
+											{descripcion2}
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<div class="list">
+			<div class="video">
+				<div class="contenido-video">
+					<div class="iframe-video">
+						<img
+							id="openModalBtn3"
+							src={img3}
+							alt="¡Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS!"
+						/>
+						<div id="myModal3" class="modal">
+							<div class="modal-content">
+								<span id="closeModalBtn3" class="close">&times;</span>
+								<div class="video-container">
+									<iframe
+										width="560"
+										height="315"
+										src={iframe3}
+										title="¡Carga MÁS RÁPIDO tu sitio web OPTIMIZANDO TIPOGRAFÍAS!"
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+										allowfullscreen
+									></iframe>
+
+									<div class="description">
+										<h2>{title3}</h2>
+										<p>
+											{descripcion3}
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+
 	
 
 	<script>
-		// Obtener referencias a elementos del DOM
-		const img = document.getElementById('openModalBtn');
-		const modal = document.getElementById('myModal');
-		const span = document.getElementById('closeModalBtn');
+// Obtener referencias a elementos del DOM
+const img = document.getElementById('openModalBtn');
+const modal = document.getElementById('myModal');
+const span = document.getElementById('closeModalBtn');
+const img2 = document.getElementById('openModalBtn2');
+const modal2 = document.getElementById('myModal2');
+const span2 = document.getElementById('closeModalBtn2');
+const img3 = document.getElementById('openModalBtn3');
+const modal3 = document.getElementById('myModal3');
+const span3 = document.getElementById('closeModalBtn3');
 
-		// Eventos para abrir los modales al hacer clic en las imágenes
-		img.onclick = function () {
-			modal.style.display = 'block';
-		};
+// Eventos para abrir los modales al hacer clic en las imágenes
+img.onclick = function () {
+  modal.style.display = 'block';
+};
 
-		// Eventos para cerrar los modales al hacer clic en la "X"
-		span.onclick = function () {
-			modal.style.display = 'none';
-		};
+img2.onclick = function () {
+  modal2.style.display = 'block';
+};
 
-		// Eventos para cerrar los modales si se hace clic fuera de ellos
-		window.onclick = function (event) {
-			if (event.target == modal) {
-				modal.style.display = 'none';
-			}
-		};
+img3.onclick = function () {
+  modal3.style.display = 'block';
+};
+
+// Eventos para cerrar los modales al hacer clic en la "X"
+span.onclick = function () {
+  modal.style.display = 'none';
+};
+
+span2.onclick = function () {
+  modal2.style.display = 'none';
+};
+
+span3.onclick = function () {
+  modal3.style.display = 'none';
+};
+
+// Eventos para cerrar los modales si se hace clic fuera de ellos
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  } else if (event.target == modal2) {
+    modal2.style.display = 'none';
+  } else if (event.target == modal3) {
+    modal3.style.display = 'none';
+  }
+};
+
 	</script>
 
