@@ -5,23 +5,19 @@ interface Props {
 	title?: string;
 	enlace?: string;
 	enlaceI?: string;
-	enlaceA?: string;
-	enlaceS?: string;
 }
 
-const { titleA, titleS, title, enlace, enlaceI, enlaceA, enlaceS } =
-	Astro.props;
+const { titleA, titleS, title, enlace, enlaceI} = Astro.props;
 ---
 
 <style>
 	:root {
-		--theme-color: #e34f26;
+		--theme-color: rgb(192 81 255);
 	}
-	.container-a{
+	.container-a {
 		display: flex;
 		margin: auto;
 	}
-	
 
 	.navpages {
 		--bgcolor: #222;
@@ -32,11 +28,15 @@ const { titleA, titleS, title, enlace, enlaceI, enlaceA, enlaceS } =
 		margin-top: 1rem;
 		font-size: 0.95rem;
 		position: absolute;
-		top: 200px;
-		left: 450px;
-		z-index: 988;
+		top: 225px;
+		left: 525px;
+		z-index: 100;
+		transition: left 500ms;
 	}
 
+	.navpages.active {
+		left: 375px;
+	}
 
 	@supports (width: fit-content) {
 		.navpages {
@@ -181,42 +181,50 @@ const { titleA, titleS, title, enlace, enlaceI, enlaceA, enlaceS } =
 			<a href={enlaceI}></a>
 		</div>
 		<div class="prev-next">
-			<a id="anteriorBtn" >{titleA}</a>
+			<a id="anteriorBtn">{titleA}</a>
 			<a class="current" href={enlace}>{title}</a>
-			<a id="siguienteBtn" >{titleS}</a>
+			<a id="siguienteBtn">{titleS}</a>
 		</div>
 	</nav>
 </div>
 
+<script>
+	// Obtener la referencia a los elementos del DOM
+	const anteriorBtn = document.getElementById('anteriorBtn');
+	const siguienteBtn = document.getElementById('siguienteBtn');
 
+	// Nombre de la página actual
+	const paginaActual = window.location.pathname.split('/').pop();
 
- <script>
-// Obtener la referencia a los elementos del DOM
-const anteriorBtn = document.getElementById('anteriorBtn');
-const siguienteBtn = document.getElementById('siguienteBtn');
+	// Definir las páginas
+	const paginas = [
+		'/',
+		'funciones',
+		'limites',
+		'continuidad',
+		'derivadas',
+		'testFunciones',
+		'testLimites',
+		'testContinuidad',
+		'testDerivadas',
+	];
 
-// Nombre de la página actual
-const paginaActual = window.location.pathname.split('/').pop();
+	// Encontrar el índice de la página actual
+	const indiceActual = paginas.indexOf(paginaActual);
 
-// Definir las páginas
-const paginas = ['/', 'funciones', 'limites', 'continuidad', 'derivadas', 'testFunciones', 'testLimites', 'testContinuidad', 'testDerivadas'];
+	// Eventos para los botones
+	anteriorBtn.onclick = function () {
+		// Calcular la página anterior
+		const paginaAnterior =
+			paginas[indiceActual - 1] || paginas[paginas.length - 1];
+		// Redirigir a la página anterior
+		window.location.href = paginaAnterior;
+	};
 
-// Encontrar el índice de la página actual
-const indiceActual = paginas.indexOf(paginaActual);
-
-// Eventos para los botones
-anteriorBtn.onclick = function() {
-    // Calcular la página anterior
-    const paginaAnterior = paginas[indiceActual - 1] || paginas[paginas.length - 1];
-    // Redirigir a la página anterior
-    window.location.href = paginaAnterior;
-}
-
-siguienteBtn.onclick = function() {
-    // Calcular la página siguiente
-    const paginaSiguiente = paginas[indiceActual + 1] || paginas[0];
-    // Redirigir a la página siguiente
-    window.location.href = paginaSiguiente;
-}
-
+	siguienteBtn.onclick = function () {
+		// Calcular la página siguiente
+		const paginaSiguiente = paginas[indiceActual + 1] || paginas[0];
+		// Redirigir a la página siguiente
+		window.location.href = paginaSiguiente;
+	};
 </script>

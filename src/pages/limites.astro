@@ -3,7 +3,6 @@ import Header from '../components/header.astro';
 import Layout from '../components/layout.astro';
 import Menu from '../components/menu.astro';
 import Botones from '../components/botones.astro';
-
 ---
 
 <Layout pageTitle="Límites" pageDescription="">
@@ -16,20 +15,18 @@ import Botones from '../components/botones.astro';
 		prev="funciones"
 		home="/"
 		next="continuidad"
+		href="testLimites"
 	/>
 
 	<Header title="Límites" />
 
 	<Botones
-    titleA="Funciones"
-    enlaceI="index"
-    title="Limites"
-    titleS="continuidad"
-    enlace="limites"
-  />
+		titleA="Funciones"
+		enlaceI="index"
+		title="Limites"
+		titleS="continuidad"
+		enlace="limites"
+	/>
 
-    <section slot="main">
-        Estoy en límites!!!
-    </section>
-
+	<section slot="main">Estoy en límites!!!</section>
 </Layout>

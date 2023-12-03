@@ -162,6 +162,8 @@ body {
   opacity: 0;
   pointer-events: none;
   scale: 0.9;
+  transition: 300ms;
+  transition-delay: 0s;
 }
 .main .container .quiz-section .quiz-box.active {
   opacity: 1;
@@ -193,9 +195,14 @@ body {
   border-radius: 3px;
   padding: 7px;
 }
+.main .container .quiz-section .quiz-box img {
+  width: 140px;
+  margin-bottom: 10px;
+}
 .main .container .quiz-section .quiz-box .question-text {
   font-size: 20px;
   font-weight: 600;
+  text-wrap: balance;
 }
 .main .container .quiz-section .quiz-box .option-list .option {
   width: 100%;
@@ -211,6 +218,19 @@ body {
 .main .container .quiz-section .quiz-box .option-list .option:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.1);
+}
+.main .container .quiz-section .quiz-box .option-list .option.correct {
+  background: rgb(10, 0, 31);
+  color: #00a63d;
+  border-color: #00a63d;
+}
+.main .container .quiz-section .quiz-box .option-list .option.incorrect {
+  background: rgb(10, 0, 31);
+  color: #a60045;
+  border-color: #a60045;
+}
+.main .container .quiz-section .quiz-box .option-list .option.disabled {
+  pointer-events: none;
 }
 .main .container .quiz-section .quiz-footer {
   display: flex;
@@ -236,10 +256,107 @@ body {
   border-radius: 6px;
   cursor: pointer;
   transition: 500ms;
+  pointer-events: none;
 }
-.main .container .quiz-section .quiz-footer .next-btn:hover {
+.main .container .quiz-section .quiz-footer .next-btn.active {
+  pointer-events: auto;
   background: rgb(192, 81, 255);
   border-color: rgb(192, 81, 255);
+  color: rgb(255, 255, 255);
+}
+.main .container .quiz-section .quiz-footer .next-btn.active:hover {
+  background: rgb(192, 81, 255);
+  border-color: rgb(192, 81, 255);
+  color: rgb(255, 255, 255);
+}
+.main .container .quiz-section .result-box {
+  width: 500px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: transparent;
+  border: 2px solid rgb(192, 81, 255);
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 300ms;
+}
+.main .container .quiz-section .result-box.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.main .container .quiz-section .result-box h2 {
+  font-size: 37px;
+}
+.main .container .quiz-section .result-box .percentage-container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: 20px 40px;
+}
+.main .container .quiz-section .result-box .percentage-container .circular-progress {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: conic-gradient(rgb(192, 81, 255) 3.6deg, rgba(255, 255, 255, 0.1) 0deg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .container .quiz-section .result-box .percentage-container .circular-progress::before {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  background: rgb(10, 0, 31);
+  border-radius: 50%;
+}
+.main .container .quiz-section .result-box .percentage-container .circular-progress .progress-value {
+  position: relative;
+  font-size: 50px;
+  font-weight: 600;
+}
+.main .container .quiz-section .result-box .percentage-container .score-text {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.main .container .quiz-section .result-box .buttons {
+  display: flex;
+  gap: 25px;
+}
+.main .container .quiz-section .result-box .buttons button {
+  width: 130px;
+  height: 47px;
+  margin-bottom: 20px;
+  font-size: 17px;
+  font-weight: 600;
+  border: 2px solid rgb(192, 81, 255);
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  background: rgb(192, 81, 255);
+  transition: 500ms;
+}
+.main .container .quiz-section .result-box .buttons button:nth-child(1):hover {
+  background: rgb(114, 48, 153);
+  border-color: rgb(114, 48, 153);
+}
+.main .container .quiz-section .result-box .buttons button:nth-child(2) {
+  background: transparent;
+  color: rgb(192, 81, 255);
+}
+.main .container .quiz-section .result-box .buttons button:nth-child(2):hover {
+  background: rgb(192, 81, 255);
   color: rgb(255, 255, 255);
 }
 .main .home {
@@ -251,7 +368,7 @@ body {
   align-items: center;
 }
 .main .home__content {
-  max-width: 700px;
+  max-width: 680px;
   height: 400px;
   padding-inline: 20px;
   display: flex;
@@ -262,7 +379,7 @@ body {
   border-radius: 7px;
 }
 .main .home__content h1 {
-  font-size: 65px;
+  font-size: 58px;
   font-weight: 700;
   line-height: 2;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -270,6 +387,7 @@ body {
 .main .home__content p {
   font-size: 16px;
   text-align: center;
+  text-wrap: balance;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .main .home__btn {
@@ -304,12 +422,12 @@ body {
   transition: 300ms;
 }
 .popup h2 {
-  line-height: 3;
+  line-height: 2;
   color: rgb(192, 81, 255);
 }
 .popup__info {
   display: inline-block;
-  font-size: 17px;
+  font-size: 18px;
   font-family: 500;
   line-height: 1.5;
   margin-block: 4px;

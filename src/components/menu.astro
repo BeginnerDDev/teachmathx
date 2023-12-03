@@ -5,15 +5,15 @@ interface Props {
 	temario_3?: string;
 	temario_4?: string;
 	temario_5?: string;
-	id1?: string
-	id2?: string
-	id3?: string
-	id4?: string
-	id5?: string
+	id1?: string;
+	id2?: string;
+	id3?: string;
+	id4?: string;
 	enlace?: string;
 	prev?: string;
 	home?: string;
 	next?: string;
+	href?: string;
 }
 
 const {
@@ -26,11 +26,11 @@ const {
 	id2,
 	id3,
 	id4,
-	id5,
 	enlace,
 	prev,
 	home,
 	next,
+	href,
 } = Astro.props;
 ---
 
@@ -40,7 +40,7 @@ const {
 		top: 0;
 		width: 330px;
 		height: 100vh;
-        background-color: #000;
+		background-color: #000;
 		left: 0;
 		transition: left 500ms;
 
@@ -63,69 +63,93 @@ const {
 			}
 		}
 
-
-
 		&__container {
 			width: 285px;
 			height: 100%;
-			background: 
-                linear-gradient(180deg, rgb(0 0 0 / .8), rgb(0 0 0 / .7)),
+			background:
+				linear-gradient(180deg, rgb(0 0 0 / 0.8), rgb(0 0 0 / 0.7)),
 				url(../../public/bg.webp) no-repeat;
 			border-right: 1px solid #fff;
+
+			.test {
+				height: 50px;
+				margin-top: 50px;
+				background: rgb(192 81 255);
+				border-radius: 7px;
+				scale: 0.8;
+				animation: flotar 1s ease-in 1s infinite alternate both;
+				
+				a {
+					height: 100%;
+					width: 100%;
+					font-size: 20px;
+					font-weight: 600;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					text-transform: uppercase;
+
+					@keyframes flotar {
+						to {
+							scale: .9;
+						}
+					}
+				}
+			}
 		}
 
 		&__logo {
 			height: 130px;
 			padding-top: 10px;
 			display: flex;
-            flex-direction: column;
+			flex-direction: column;
 			align-items: center;
 			gap: 25px;
 			border-bottom: 1px solid rgb(255 255 255 / 0.2);
 
 			.materia {
 				font-size: 14px;
-                color: #fff;
+				color: #fff;
 			}
 
-            .logo {
-                display: flex;
-                align-items: center;
-                color: white;
+			.logo {
+				display: flex;
+				align-items: center;
+				color: white;
 
-                .tmx {
-                    font-size: 22px;
-                    font-weight: 500;
-                }
-            }
+				.tmx {
+					font-size: 22px;
+					font-weight: 500;
+				}
+			}
 		}
 
 		&__icons {
-            margin-block: 10px;
+			margin-block: 10px;
 			height: 60px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-            gap: 25px;
+			gap: 25px;
 
 			svg {
-                width: 30px;
-                height: 30px;
-                transition: stroke 350ms;
-                stroke: rgb(255 255 255 / .7);
-                &:hover {
-                    stroke: rgb(255 255 255);
-                }
+				width: 30px;
+				height: 30px;
+				transition: stroke 350ms;
+				stroke: rgb(255 255 255 / 0.7);
+				&:hover {
+					stroke: rgb(255 255 255);
+				}
 			}
 		}
 
-        .guia {
-            padding-left: 7px;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            color: #fff;
-        }
+		.guia {
+			padding-left: 7px;
+			display: flex;
+			align-items: center;
+			gap: 7px;
+			color: #fff;
+		}
 
 		li {
 			display: flex;
@@ -134,8 +158,8 @@ const {
 				display: flex;
 				align-items: center;
 				gap: 7px;
-                margin-top: 20px;
-                margin-left: 20px;
+				margin-top: 20px;
+				margin-left: 20px;
 			}
 		}
 	}
@@ -161,10 +185,10 @@ const {
 	<div class="nav__container">
 		<div class="nav__logo">
 			<span class="materia">Cálculo Diferencial</span>
-            <div class="logo">
-                <img src="logo.svg" alt="">
-                <span class="tmx">TeachMathX</span>
-            </div>
+			<div class="logo">
+				<img src="logo.svg" alt="" />
+				<span class="tmx">TeachMathX</span>
+			</div>
 		</div>
 		<div class="nav__icons">
 			<a href={prev}>
@@ -340,32 +364,11 @@ const {
 							<span>{temario_4}</span>
 						</a>
 					</li>
-					<li class="sub__item">
-						<a href={id5} class="sub__link">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="icon icon-tabler icon-tabler-file"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								stroke-width="2"
-								stroke="currentColor"
-								fill="none"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								><path
-									stroke="none"
-									d="M0 0h24v24H0z"
-									fill="none"></path><path
-									d="M14 3v4a1 1 0 0 0 1 1h4"></path><path
-									d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
-								></path></svg
-							>
-							<span>{temario_5}</span>
-						</a>
-					</li>
 				</ul>
 			</li>
 		</ul>
+		<div class="test">
+			<a href={href}>tomar prueba</a>
+		</div>
 	</div>
 </nav>

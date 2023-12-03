@@ -2,10 +2,9 @@
 interface Props {
 	pageTitle?: string;
 	title?: string;
-	prueba?: string;
 }
 
-const { pageTitle, title, prueba } = Astro.props;
+const { pageTitle, title} = Astro.props;
 
 import '../css/styleTest.css';
 ---
@@ -32,8 +31,43 @@ import '../css/styleTest.css';
 			</header>
 
 			<div class="container">
-				
-                <slot name="quiz"/>
+				<section class="quiz-section" slot="quiz">
+					<div class="quiz-box">
+						<h2>TeachMathX Quiz</h2>
+						<div class="quiz-header">
+							<span>Prueba de {title}</span>
+							<span class="header-score">Puntuación: 0 / 10</span>
+						</div>
+
+						<img class="question-image" src="" alt="imagenes" />
+						<h3 class="question-text">
+							¿Cuál es el valor de \(f(5)\)?
+						</h3>
+
+						<div class="option-list"></div>
+
+						<div class="quiz-footer">
+							<span class="question-total">1 de 10 preguntas</span
+							>
+							<button class="next-btn">Siguiente</button>
+						</div>
+					</div>
+
+					<div class="result-box">
+						<h2>¡Resultado final!</h2>
+						<div class="percentage-container">
+							<div class="circular-progress">
+								<span class="progress-value">0%</span>
+							</div>
+							<span class="score-text">Tu puntuación fue 0 de 10</span>
+							<!-- <span class="message">¡Felicidades¡</span> -->
+						</div>
+						<div class="buttons">
+							<button class="tryAgain-btn">Volver a Intentar</button>
+							<button class="goHome-btn">Ir a Inicio</button>
+						</div>
+					</div>
+				</section>
 
 				<section class="home">
 					<div class="home__content">
@@ -50,12 +84,9 @@ import '../css/styleTest.css';
 		</main>
 
 		<div class="popup">
-			<h2>Aviso:</h2>
+			<h2>Nota:</h2>
 			<span class="popup__info"
-				>La prueba consta de 10 preguntas, las cuales tienen un límite
-				de 20 segundos/u para responder. Una vez se cumpla el límite,
-				pasará automáticamente a la siguiente, haya sido completada o
-				no.</span
+				>La evaluación consta de 10 preguntas sin límite de tiempo para responder. Tienes total libertad para responder cada pregunta a tu propio ritmo, sin restricciones temporales.</span
 			>
 			<div class="btn__group">
 				<button class="info__btn exit-btn">Salir de la prueba</button>
@@ -63,14 +94,29 @@ import '../css/styleTest.css';
 			</div>
 		</div>
 
-		<script src="../js/funciones.js"></script>
-		<script src="../js/limites.js"></script>
-		<script src="../js/continuidad.js"></script>
-		<script src="../js/derivadas.js"></script>
 		<script
 			type="text/javascript"
 			async
 			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
 		></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				// Obtener el nombre de la página actual
+				var currentPage = window.location.pathname.split('/').pop();
+
+				// Obtener todos los enlaces de la barra de navegación
+				var navLinks = document.querySelectorAll('.nav__link');
+
+				// Iterar sobre los enlaces y agregar la clase "active" al enlace correspondiente
+				navLinks.forEach(function (link) {
+					var linkPage = link.getAttribute('href').split('/').pop();
+					if (linkPage === currentPage) {
+						link.classList.add('active');
+					} else {
+						link.classList.remove('active');
+					}
+				});
+			});
+		</script>
 	</body>
 </html>

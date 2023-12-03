@@ -36,7 +36,7 @@ nextBtn.onclick = () => {
 
 }
 
-function showQuestion(i) {
+function showQuestion(index) {
     const questionText = document.querySelector('.question-text');
-    questionText.textContent = `${questionsF[i].id}. ${questionsF[i].question}`
+    questionText.textContent = `${questionsF[index].id}. ${questionsF[index].question}`
 }
