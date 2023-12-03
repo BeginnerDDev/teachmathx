@@ -18,7 +18,7 @@ body {
             rgb(0 0 0 / .5),
             transparent,
             transparent),
-        url(bgTest.webp) no-repeat top center/cover;
+        url(https://terminaldelinux.com/assets/header-terminal.webp) no-repeat top center/cover;
     transition: 300ms;
 
     &.active {
@@ -40,9 +40,9 @@ body {
         z-index: 100;
 
         .logo {
-
+            
             span {
-                font-size: 22px;
+                font-size: 24px;
                 font-weight: 600;
                 color: $white-color;
             }

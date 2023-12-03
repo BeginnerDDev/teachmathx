@@ -65,7 +65,7 @@ body {
 
 .main {
   min-height: 100vh;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent, transparent), url(bgTest.webp) no-repeat top center/cover;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent, transparent), url(https://terminaldelinux.com/assets/header-terminal.webp) no-repeat top center/cover;
   transition: 300ms;
 }
 .main.active {
@@ -86,7 +86,7 @@ body {
   z-index: 100;
 }
 .main .header .logo span {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   color: rgb(255, 255, 255);
 }
