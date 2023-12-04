@@ -16,6 +16,62 @@ body {
     overflow-x: hidden;
 }
 
+#preloader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(10 0 31);
+    clip-path: circle(141.2% at 0 100%);
+    transition: all 500ms ease-in-out;
+    z-index: 9999999;
+    
+}
+#loader {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9370DB;
+    animation: spin 2s linear infinite;
+}
+#loader:before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #BA55D3;
+    animation: spin 3s linear infinite;
+}
+#loader:after {
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #FF00FF;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0%   {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loaded {
+    pointer-events: none;
+    clip-path: circle(0.0% at 0 100%);
+    opacity: 0;
+}
+
 .container {
     position: relative;
     width: calc(100% - 330px);
@@ -39,14 +95,23 @@ body {
 
     .content {
         width: 1100px;
-        height: 100vh;
-        margin-top: 120px;
+        margin-top: 200px;
 
 
         .title {
-            margin-top: 30px;
-            font-size: 40px;
-            line-height: 2;
+            margin-top: 15px;
+            font-size: 1.75rem;
+            line-height: 2.5;
+            text-shadow: 0 0 6px rgb(255 255 255 / .6);
+        }
+
+        .subtitle {
+            font-size: 19px;
+            font-weight: 400;
+
+            span {
+                font-size: 19px;
+            }
         }
 
         &__image {
@@ -57,7 +122,67 @@ body {
 
             img {
                 width: 370px;
+
+                &[src^="propiedad"] {
+                    width: 750px;
+                }
             }
+
+            .bloque {
+                width: 500px;
+                img {
+                    width: 225px;
+                }
+            }
+
+            .bloque-b {
+                display: grid;
+                grid-template-columns: repeat(2, 500px);
+                gap: 50px;
+
+                .a {
+                    display: flex;
+                    gap: 20px;
+                    
+                    p {
+                        font-size: 16px;
+                    }
+                    figure {
+                        img {
+                            width: 250px;
+                        }
+
+                        figcaption {
+                            
+                            span {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        ul {
+            
+            li {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                
+                .formula {
+                    margin-top: 25px;
+                    margin-left: 50px;
+
+                    &:nth-child(2) {
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+        }
+
+        .algo {
+            margin-block: 30px;
         }
 
 

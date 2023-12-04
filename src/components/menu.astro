@@ -9,6 +9,7 @@ interface Props {
 	id2?: string;
 	id3?: string;
 	id4?: string;
+	id5?: string;
 	enlace?: string;
 	prev?: string;
 	home?: string;
@@ -26,7 +27,7 @@ const {
 	id2,
 	id3,
 	id4,
-	enlace,
+	id5,
 	prev,
 	home,
 	next,
@@ -158,8 +159,26 @@ const {
 				display: flex;
 				align-items: center;
 				gap: 7px;
-				margin-top: 20px;
-				margin-left: 20px;
+				margin-top: 10px;
+				padding-block: 10px;
+				padding-left: 20px;
+				transition: background 350ms, color 350ms;
+
+				&:hover {
+					background: rgba(226, 210, 235, 0.253);
+					color: #fff;
+				}
+
+
+				&.active {
+					background: rgb(192 81 255);
+					color: #fff;
+					font-weight: 600;
+				}
+
+				span {
+					font-size: 15px;
+				}
 			}
 		}
 	}
@@ -362,6 +381,30 @@ const {
 								></path></svg
 							>
 							<span>{temario_4}</span>
+						</a>
+					</li>
+					<li class="sub__item">
+						<a href={id5} class="sub__link">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-file"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									stroke="none"
+									d="M0 0h24v24H0z"
+									fill="none"></path><path
+									d="M14 3v4a1 1 0 0 0 1 1h4"></path><path
+									d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+								></path></svg
+							>
+							<span>{temario_5}</span>
 						</a>
 					</li>
 				</ul>

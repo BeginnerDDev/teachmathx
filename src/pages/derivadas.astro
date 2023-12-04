@@ -3,6 +3,7 @@ import Header from '../components/header.astro';
 import Layout from '../components/layout.astro';
 import Menu from '../components/menu.astro';
 import Botones from '../components/botones.astro';
+import Modal from '../components/modal.astro';
 ---
 
 <Layout pageTitle="Derivadas" pageDescription="">
@@ -28,5 +29,22 @@ import Botones from '../components/botones.astro';
 		enlace="derivadas"
 	/>
 
-	<section slot="main">Estoy en Derivadas!!!</section>
+	<section slot="main">
+		<Modal
+			titleSeccion="Videos Relacionados"
+			descripcionSeccion="Aqui podras ver videos relacionados con las Funciones 😱"
+			img1="https://i3.ytimg.com/vi/Ll7xfe3HoZE/maxresdefault.jpg"
+			iframe1="https://www.youtube.com/embed/Ll7xfe3HoZE?si=k-V441Snh9YJXrL2"
+			title1="Funciones"
+			descripcion1="Explicación de los conceptos de relación y función, con algunos ejemplos con conjuntos, dentro del curso de Funciones."
+			img2="https://i3.ytimg.com/vi/bEcZu7HSijw/maxresdefault.jpg"
+			iframe2="https://www.youtube.com/embed/bEcZu7HSijw?si=kGbDnYuv5noIwaGm"
+			title2="¿QUÉ es UNA FUNCIÓN?"
+			descripcion2="En este video estudiaremos en detalle el CONCEPTO DE FUNCIÓN, pero para entender mejor esta idea, primero tenemos que revisar conceptos previos como: par ordenado, producto cartesiano, relaciones y finalmente funciones."
+			img3="https://i3.ytimg.com/vi/onh9C8dv9x4/maxresdefault.jpg"
+			iframe3="https://www.youtube.com/embed/onh9C8dv9x4?si=UyXlGAprHtpnjDVA"
+			title3="Funciones"
+			descripcion3="En el video, veremos cómo identificar si una gráfica representa o no a una función o a una relación, así como definir los conjuntos de dominio y rango."
+		/>
+	</section>
 </Layout>

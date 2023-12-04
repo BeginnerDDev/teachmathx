@@ -1,71 +1,319 @@
 ---
-import Header from "../components/header.astro";
-import Layout from "../components/layout.astro";
-import Menu from "../components/menu.astro";
-import Botones from "../components/botones.astro";
-import Modal from "../components/modal.astro";
+import Header from '../components/header.astro';
+import Layout from '../components/layout.astro';
+import Menu from '../components/menu.astro';
+import Botones from '../components/botones.astro';
+import Modal from '../components/modal.astro';
 ---
 
 <Layout pageTitle="Funciones" pageDescription="">
-  <Menu
-    temario_1="¿Qué son?"
-    id1="#Que_son_las_funciones"
-    temario_2="¿Para qué sirven?"
-    id2="#Para_que_sirven"
-    temario_3="Tipos"
-    id3="#Tipos"
-    temario_4="Ejemplos"
-    id4="#ejemplo"
-    prev="/"
-    home="/"
-    next="limites"
-    href="testFunciones"
-  />
+	<Menu
+		temario_1="¿Qué son las funciones?"
+		id1="#que_son_las_funciones"
+		temario_2="¿Para qué sirven las funciones?"
+		id2="#para_que_sirven_las_funciones"
+		temario_3="Propiedades de las funciones"
+		id3="#propiedades_de_las_funciones"
+		temario_4="Tipos de las funciones"
+		id4="#tipos_de_funciones"
+		temario_5="Ejemplos de funciones"
+		id5="#ejemplos_de_funciones"
+		prev="/"
+		home="/"
+		next="limites"
+		href="testFunciones"
+	/>
 
-  <Header title="Funciones" />
+	<Header title="Funciones" />
 
-  <Botones
-    titleA="Home"
-    enlaceI="/"
-    title="Funciones"
-    titleS="Limites"
-    enlace="funciones"
-  />
+	<Botones
+		titleA="Home"
+		enlaceI="/"
+		title="Funciones"
+		titleS="Limites"
+		enlace="funciones"
+	/>
 
+	<section slot="main">
+		<section class="content">
+			<p>
+				Las <strong>funciones matemáticas</strong> son uno de esos temas
+				que marcan el inicio de las matemáticas “más serias”. Muchos
+				estudiantes suelen tener problemas con estas y es que con uno de
+				esos conceptos que marcan un antes y un después en la asignatura
+				de matemáticas.
+			</p>
 
-  
+			<h2 class="title" id="que_son_las_funciones">
+				¿Qué son las funciones?
+			</h2>
+			<p>
+				Las funciones matemáticas pueden parecer algo muy complejo, sin
+				embargo, se trata de un concepto no muy difícil de entender. Una
+				función matemática no es más que la <strong>
+					representación matemática de la relación que existe entre
+					dos variables
+				</strong>. Esto quiere decir que el valor de una de las
+				variables depende de la otra. <br /><br />
 
-      <!-- <picture class="content__image">
-        <Modal
-          iframe="https://www.youtube.com/embed/TzYDhp-6eBw?si=fkue3xK5wQP0iPWE"
-          enlaceimg="bg.webp"
-          titleD="Funciones"
-          descripcion="  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, voluptatum aliquid? Officiis placeat aspernatur fugiat impedit pariatur fugit eligendi dicta!"
-          titleC="curso de Funciones"
-        />
-      </picture> -->
-      <section slot="main">
-        <Modal 
-        titleSeccion="Videos de Funciones"
-          descripcionSeccion="Aqui podras ver videos relacionados con las Funciones 😱"
-  
-          img1="https://i3.ytimg.com/vi/Ll7xfe3HoZE/maxresdefault.jpg"
-          iframe1="https://www.youtube.com/embed/Ll7xfe3HoZE?si=k-V441Snh9YJXrL2"
-          title1="Funciones"
-          descripcion1="Explicación de los conceptos de relación y función, con algunos ejemplos con conjuntos, dentro del curso de Funciones."
-  
-          img2="https://i3.ytimg.com/vi/bEcZu7HSijw/maxresdefault.jpg"
-          iframe2="https://www.youtube.com/embed/bEcZu7HSijw?si=kGbDnYuv5noIwaGm"
-          title2="¿QUÉ es UNA FUNCIÓN?"
-          descripcion2="En este video estudiaremos en detalle el CONCEPTO DE FUNCIÓN, pero para entender mejor esta idea, primero tenemos que revisar conceptos previos como: par ordenado, producto cartesiano, relaciones y finalmente funciones."
-  
-          img3="https://i3.ytimg.com/vi/onh9C8dv9x4/maxresdefault.jpg"
-          iframe3="https://www.youtube.com/embed/onh9C8dv9x4?si=UyXlGAprHtpnjDVA"
-          title3="Funciones"
-          descripcion3="En el video, veremos cómo identificar si una gráfica representa o no a una función o a una relación, así como definir los conjuntos de dominio y rango."
-  
-        />
-    </section>
-    <section class="content"></section>
-  </div>
+				 Aplicar una función sobre un valor no es más que sustituir este
+				por una de las variables de la función, <strong
+					>la variable <span>\(x\)</span> o variable dependiente</strong
+				>, para obtener el valor de <strong
+					>la variable Y o variable independiente</strong
+				>. La aplicación de una función sobre un valor <span>\(x\)</span
+				> se representa como <span>\(f(x)\)</span> y da como resultado
+				el valor de <span>\(y\)</span> que se relaciona con el valor <span
+					>\(x\)</span
+				> según la función <span>\(f\)</span>.
+			</p>
+			<picture class="content__image">
+				<img src="PolygonsFunction.svg" alt="Función de polígonos" />
+			</picture>
+
+			<h2 class="title" id="para_que_sirven_las_funciones">
+				¿Para qué sirven las funciones?
+			</h2>
+			<p>
+				Las funciones en matemáticas son herramientas fundamentales que nos permiten comprender y describir las relaciones entre diferentes cantidades. En esencia, una función establece una correspondencia entre un conjunto de entrada, conocido como dominio, y un conjunto de salida, llamado codominio. Lo crucial es que cada elemento del dominio se relaciona con uno y solo un elemento del codominio. <br /><br /> Estas relaciones son fundamentales en la modelización de fenómenos del mundo real. Por ejemplo, en la física, las funciones pueden describir cómo la posición, la velocidad o la aceleración de un objeto cambian en función del tiempo. En la economía, pueden representar cómo varían la oferta y la demanda en relación con el precio de un bien. En biología, las funciones se utilizan para entender cómo evolucionan las poblaciones o cómo interactúan diferentes especies en un ecosistema. <br/><br /> Además de ser útiles para modelar fenómenos, las funciones son esenciales para resolver problemas matemáticos y científicos. En álgebra y cálculo, se emplean para resolver ecuaciones, determinar puntos críticos en gráficos, y optimizar situaciones donde se busca maximizar o minimizar una determinada cantidad. También se utilizan en estadística para analizar datos, ajustar modelos a conjuntos de información y predecir tendencias futuras.
+			</p>
+
+			<h2 class="title" id="propiedades_de_las_funciones">
+				Propiedades de las funciones
+			</h2>
+			<p>
+				Las composición de funciones en matemáticas, como cualquier otra operación en matemáticas, tiene una serie de propiedades que es necesario conocer para poder aplicarla de manera correcta:
+			</p>
+
+			<ul>
+				<li>
+					<span><strong>Es asociativa:</strong></span>
+					<span class="formula">\(f o (g o h) = (f o g) o h\)</span>
+				</li>
+				<li>
+					<span><strong>No es conmutativa:</strong></span>
+					<span class="formula">\(f o g ≠ g o f\)</span>
+				</li>
+				<li>
+					<span
+						>El <strong>elemento neutro</strong> en las funciones
+						compuestas es la <strong>función identidad</strong>
+						(id):</span
+					>
+					<span class="formula">\(f o id = f\)</span>
+				</li>
+				<li>
+					<span
+						>La <strong>función inversa</strong> de la composición
+						de funciones f y g es:</span
+					>
+					<span class="formula">\((g o f)^-1 = f^-1 o g^-1 \)</span>
+				</li>
+			</ul>
+
+			<h2 class="title" id="tipos_de_funciones">Tipos de funciones</h2>
+			<p>
+				Lo último que debes saber es que existen diferentes tipos de
+				funciones matemáticas, cada una de ellas con características
+				diferentes.
+			</p>
+
+			<ul>
+				<li>
+					<span><strong>Funciones polinómicas:</strong></span>
+					<span class="formula"
+						>\(f(x) = a_0 + a_1x + a_2x + a_3x... + a_nx\)</span
+					>
+				</li>
+				<li>
+					<span><strong>Funciones constantes:</strong></span>
+					<span class="formula">\(f(x) = k\)</span>
+				</li>
+				<li>
+					<span><strong>Funciones racionales:</strong></span>
+					<span class="formula"
+						>\(f(x) = (a_0 + a_1x + a_2x + a_3x... + a_nx) / (b_0 +
+						b_1x + b_2x + b_3x... + b_nx) \)</span
+					>
+				</li>
+				<li>
+					<span><strong> Funciones exponenciales:</strong></span>
+					<span class="formula">\(f(x) = a^x\)</span>
+				</li>
+				<li>
+					<span><strong> Funciones logarítmicas:</strong></span>
+					<span class="formula">\(f(x) = log_ax\)</span>
+				</li>
+			</ul>
+
+			<p class="algo">
+				También hay que mencionar el grupo de las funciones
+				trigonométricas:
+			</p>
+
+			<ul>
+				<li>
+					<span><strong>Función seno:</strong></span>
+					<span class="formula">\(f(x) = sen(x)\)</span>
+				</li>
+				<li>
+					<span><strong>Función coseno:</strong></span>
+					<span class="formula">\(f(x) = cos(x)\)</span>
+				</li>
+				<li>
+					<span><strong>Función tangente:</strong></span>
+					<span class="formula">\(f(x) = tg (x)\)</span>
+				</li>
+				<li>
+					<span><strong> Función cosecante:</strong></span>
+					<span class="formula">\(f(x) = cosec(x)\)</span>
+				</li>
+				<li>
+					<span><strong> Función secante:</strong></span>
+					<span class="formula">\(f(x) = sec(x)\)</span>
+				</li>
+				<li>
+					<span><strong> Función secante:</strong></span>
+					<span class="formula">\(f(x) = cotg(x)\)</span>
+				</li>
+			</ul>
+
+			<h2 class="title" id="ejemplos_de_funciones">
+				Ejemplos de funciones
+			</h2>
+
+			<h3 class="subtitle">
+				Función constante: <span>\(f(x) = k\)</span>, donde <span
+					>\(k\)</span
+				> es alguna constante
+			</h3>
+			<picture class="content__image">
+				<img src="func_graf_06.gif" alt="funcion constante" />
+			</picture>
+			<h3 class="subtitle">
+				Función lineal: <span>\(f(x) = ax + b\)</span>
+			</h3>
+			<picture class="content__image">
+				<div class="bloque">
+					<img src="func_graf_07.gif" alt="funcion lineal" />
+					<img src="func_graf_11.gif" alt="funcion lineal" />
+					<img src="func_graf_08.gif" alt="funcion lineal" />
+					<img src="func_graf_10.gif" alt="funcion lineal" />
+				</div>
+			</picture>
+			<h3 class="subtitle">
+				Función cuadrática: <span
+					>\(f(x) = ax^2 + bx + x = a(x - a_0)^2 + y_0\)</span
+				>
+			</h3>
+			<picture class="content__image">
+				<div class="bloque-b">
+					<div class="a">
+						<p>
+							El punto rojo se llama vértice de la parábola.
+							¿Cuáles son sus coordenadas? ¿Cómo se relacionan las
+							coordenadas del vértice con los números en la forma <span
+								>\(f(x) = a(x-x_0)^2 + y_0\)?</span
+							>
+						</p>
+						<figure>
+							<img
+								src="func_graf_12.gif"
+								alt="funcion cuadratica"
+							/>
+							<figcaption>
+								<span>\(f(x) = x^2 + 2x + 1 = (x + 1)^2\)</span>
+							</figcaption>
+						</figure>
+					</div>
+					<div class="a">
+						<p>
+							El punto rojo se llama vértice de la parábola.
+							¿Cuáles son sus coordenadas? ¿Cómo se relacionan las
+							coordenadas del vértice con los números en la forma <span
+								>\(f(x) = a(x-x_0)^2 + y_0\)?</span
+							>
+						</p>
+						<figure>
+							<img
+								src="func_graf_13.gif"
+								alt="funcion cuadratica"
+							/>
+							<figcaption>
+								<span>\(f(x) = 2x^2 + x = (x + 1)^2 - 1\)</span>
+							</figcaption>
+						</figure>
+					</div>
+					<div class="a">
+						<p>
+							El punto rojo se llama vértice de la parábola.
+							¿Cuáles son sus coordenadas? ¿Cómo se relacionan las
+							coordenadas del vértice con los números en la forma <span
+								>\(f(x) = a(x-x_0)^2 + y_0\)?</span
+							>
+						</p>
+						<figure>
+							<img
+								src="func_graf_14.gif"
+								alt="funcion cuadratica"
+							/>
+							<figcaption>
+								<span>\(f(x) = 2x - x^2 = 1 - (x - 1)^2\)</span>
+							</figcaption>
+						</figure>
+					</div>
+					<div class="a">
+						<p>
+							El punto rojo se llama vértice de la parábola.
+							¿Cuáles son sus coordenadas? ¿Cómo se relacionan las
+							coordenadas del vértice con los números en la forma <span
+								>\(f(x) = a(x-x_0)^2 + y_0\)</span
+							>? <br /> <br /> ¿Qué significancia tienen los números <span
+								>\(a\)</span
+							>, <span>\(x_0\)</span>, <span>\(y_0\)</span> para
+							la gráfica de la función <span
+								>\(f(x) = a(x-x_0)^2 + y_0\)</span
+							>?
+						</p>
+						<figure>
+							<img
+								src="func_graf_15.gif"
+								alt="funcion cuadratica"
+							/>
+							<figcaption>
+								<span
+									>\(f(x) = 10 + 2x - 2x^2 = \frac{1}{2} - 2
+									[-(\frac{1}{2}) + x^2]\)</span
+								>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+			</picture>
+
+      <h3 class="subtitle">
+				Función polinomial: <span>\(P(x) = x^3 - 3x^2 + 2x - 7\)</span> </h3>
+			<picture class="content__image">
+				<img src="func_graf_16.gif" alt="funcion constante" />
+			</picture>
+
+		</section>
+
+		<Modal
+			titleSeccion="Videos Relacionados"
+			descripcionSeccion="Aqui podras ver videos relacionados con las Funciones 😱"
+			img1="https://i3.ytimg.com/vi/Ll7xfe3HoZE/maxresdefault.jpg"
+			iframe1="https://www.youtube.com/embed/Ll7xfe3HoZE?si=k-V441Snh9YJXrL2"
+			title1="Funciones"
+			descripcion1="Explicación de los conceptos de relación y función, con algunos ejemplos con conjuntos, dentro del curso de Funciones."
+			img2="https://i3.ytimg.com/vi/bEcZu7HSijw/maxresdefault.jpg"
+			iframe2="https://www.youtube.com/embed/bEcZu7HSijw?si=kGbDnYuv5noIwaGm"
+			title2="¿QUÉ es UNA FUNCIÓN?"
+			descripcion2="En este video estudiaremos en detalle el CONCEPTO DE FUNCIÓN, pero para entender mejor esta idea, primero tenemos que revisar conceptos previos como: par ordenado, producto cartesiano, relaciones y finalmente funciones."
+			img3="https://i3.ytimg.com/vi/onh9C8dv9x4/maxresdefault.jpg"
+			iframe3="https://www.youtube.com/embed/onh9C8dv9x4?si=UyXlGAprHtpnjDVA"
+			title3="Funciones"
+			descripcion3="En el video, veremos cómo identificar si una gráfica representa o no a una función o a una relación, así como definir los conjuntos de dominio y rango."
+		/>
+	</section>
 </Layout>

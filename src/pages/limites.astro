@@ -3,15 +3,21 @@ import Header from '../components/header.astro';
 import Layout from '../components/layout.astro';
 import Menu from '../components/menu.astro';
 import Botones from '../components/botones.astro';
+import Modal from '../components/modal.astro';
 ---
 
 <Layout pageTitle="Límites" pageDescription="">
 	<Menu
-		temario_1="Conceptos"
-		temario_2="Tipos"
-		temario_3="Características"
-		temario_4="Ejemplos"
-		temario_5="Aplicación"
+		temario_1="¿Qué es el límite?"
+		id1="#que_es_el_limite"
+		temario_2="¿Cómo entender bien el límite?"
+		id2="#como_entender_el_limite"
+		temario_3="Propiedades de los límites"
+		id3="#propiedades_de_los_limites"
+		temario_4="Tipos de límites"
+		id4="#tipos_de_limites"
+		temario_5="Ejemplos de límites"
+		id5="#ejemplos_de_limites"
 		prev="funciones"
 		home="/"
 		next="continuidad"
@@ -28,5 +34,122 @@ import Botones from '../components/botones.astro';
 		enlace="limites"
 	/>
 
-	<section slot="main">Estoy en límites!!!</section>
+	<section slot="main">
+		<section class="content">
+			<p>
+				Un <strong>límite</strong> nos dice el valor al que una función
+				se aproxima conforme sus valores de entrada se acercan cada vez
+				más a cierto número. El concepto de límite es la base de todo el
+				cálculo.
+			</p>
+
+			<h2 class="title" id="que_es_el_limite">¿Qué es el límite?</h2>
+			<p>
+				El límite es un concepto fundamental que describe el
+				comportamiento de una función a medida que la variable
+				independiente se acerca a cierto valor específico. Se utiliza
+				para entender y calcular el valor al que se aproxima una función
+				cuando la variable independiente se acerca cada vez más a un
+				determinado punto. <br /> <br /> Formalmente, se dice que el límite de una función <span>\(f(x)\)</span> cuando <span>\(x\)</span> tiende hacia un valor <span>\(a\)</span> (denotando como <span>\( lim_x→a\)</span> <span>\(f(x)\)</span>) es el valor al que se acerca <span>\(f(x)\)</span> a medida que los valores de <span>\(x\)</span> se acercan a <span>\(a\)</span> sin llegar a ser igual a <span>\(a\)</span>.
+			</p>
+			<br />
+			<p>
+				El concepto de límite es crucial en cálculo y análisis matemático, ya que permite comprender el comportamiento de funciones en puntos específicos, determinar la continuidad de una función, encontrar derivadas e integrales, y resolver problemas relacionados con la convergencia de series, entre otras aplicaciones en matemáticas y ciencias.
+			</p>
+
+			<h2 class="title" id="como_entender_el_limite">¿Cómo entender bien a los límites?</h2>
+
+			<p>
+				Para entender qué son los límites, consideremos un
+				ejemplo. Empezamos con la función <span>\(f(x) = x + 2\)</span>.
+			</p>
+
+			<picture class="content__image">
+				<img src="limite-1.png" alt="Función de polígonos" />
+			</picture>
+
+			<p>
+				El límite de <span>\(f\)</span> en <span>\(x = 3\)</span> es el
+				valor al cual se aporxima <span>\(f\)</span> a medida que nos
+				acercamos más y más a <span>\(x = 3\)</span>. Gráficamente, es
+				el valor de <span>\(y\)</span> al que tendremos en la gráfica de
+
+				<span>\(f\)</span> al acercarnos más y más al punto de la
+				gráfica donde <span>\(x = 3\)</span>. <br />
+				<br /> Por ejemplo, si partimos del punto <span>\((1,3)\)</span>
+				y nos movemos en la gráfica hasta estar muy cerca de <span
+					>\(x = 3\)</span
+				>, entonces nuestro valor <span>\(y\)</span> (es decir, el valor
+				de la función) está muy cerca de <span>\(5\)</span>.
+			</p>
+
+			<picture class="content__image">
+				<img src="limite-2.gif" alt="grafico de limites" />
+			</picture>
+
+			<p>
+				Similarmente, si empezamos en <span>\((5, 7)\)</span> y nos
+				movemos a la izquierda hasta estar muy cerca de <span
+					>\(x = 3\)</span
+				>, el valor <span>\(y\)</span> nuevamente estará muy cerca de <span
+					>\(5\)</span
+				>.
+			</p>
+
+			<picture class="content__image">
+				<img src="limite-3.gif" alt="grafico de limites" />
+			</picture>
+
+			<p>
+				Por estas razones, decimos que <strong
+					>el límite de <span>\(f\)</span> en <span>\(x = 3\)</span>
+					es <span>\(5\)</span></strong
+				>.
+			</p>
+
+			<picture class="content__image">
+				<img src="limite-4.png" alt="grafico de limites" />
+			</picture>
+
+			<p>
+				Tal vez te preguntes cuál es la diferencia entre el límite de <span>\(f\)</span> en <span>\(x = 3\)</span> y el valor de <span>\(f\)</span> en <span>\(x = 3\)</span>, es decir, <span>\(f(3)\)</span>. <br /> <br/ > Y sí, el límite de <span>\(f(x) = x + 2\)</span> en <span>\(x = 3\)</span> es igual a <span>\(f(3)\)</span>, pero este no siempre es el caso. Para entender esto, consideremos la función <span>\(g\)</span>. Esta función es igual a <span>\(f\)</span>, excepto que no está definida para <span>\(x = 3\)</span>.
+			</p>
+
+			<picture class="content__image">
+				<img src="limite-5.png" alt="grafico de limites" />
+			</picture>
+
+			<h2 class="title" id="propiedades_de_los_limites">Propiedades de los límites</h2>
+			<p>
+				Las propiedades de los límites son operaciones que se pueden emplear para simplificar el cálculo del límite de una función más compleja. Al tratarse de operaciones, también se le denomina álgebra de los límites. <br /> <br/ > Sean <span>\(f(x)\)</span> y <span>\(g(x)\)</span> dos funciones definidas en un mismo intervalo en donde está el valor a del límite y <span>\(k\)</span> una constante.
+			</p>
+
+			<picture class="content__image">
+				<img src="propiedad-limites.png" alt="propiedades de los limites">
+			</picture>
+
+			<h2 class="title" id="tipos_de_limites">Tipos de límites</h2>
+			<p></p>
+
+			<h2 class="title" id="ejemplos_de_limites">Ejemplos de límites</h2>
+
+		</section>
+
+		<Modal
+			titleSeccion="Videos Relacionados"
+			descripcionSeccion="Aqui podras ver videos relacionados con las Funciones 😱"
+			img1="https://i3.ytimg.com/vi/Ll7xfe3HoZE/maxresdefault.jpg"
+			iframe1="https://www.youtube.com/embed/Ll7xfe3HoZE?si=k-V441Snh9YJXrL2"
+			title1="Funciones"
+			descripcion1="Explicación de los conceptos de relación y función, con algunos ejemplos con conjuntos, dentro del curso de Funciones."
+			img2="https://i3.ytimg.com/vi/bEcZu7HSijw/maxresdefault.jpg"
+			iframe2="https://www.youtube.com/embed/bEcZu7HSijw?si=kGbDnYuv5noIwaGm"
+			title2="¿QUÉ es UNA FUNCIÓN?"
+			descripcion2="En este video estudiaremos en detalle el CONCEPTO DE FUNCIÓN, pero para entender mejor esta idea, primero tenemos que revisar conceptos previos como: par ordenado, producto cartesiano, relaciones y finalmente funciones."
+			img3="https://i3.ytimg.com/vi/onh9C8dv9x4/maxresdefault.jpg"
+			iframe3="https://www.youtube.com/embed/onh9C8dv9x4?si=UyXlGAprHtpnjDVA"
+			title3="Funciones"
+			descripcion3="En el video, veremos cómo identificar si una gráfica representa o no a una función o a una relación, así como definir los conjuntos de dominio y rango."
+		/>
+	</section>
 </Layout>

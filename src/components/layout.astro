@@ -22,10 +22,14 @@ import '../css/style.css';
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content={pageDescription} />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="shortcut icon" href="logo.svg" type="image/svg">
+		<link rel="shortcut icon" href="logo.svg" type="image/svg" />
 		<title>{pageTitle} | {nameWebSite}</title>
 	</head>
 	<body>
+		<div id="preloader">
+			<div id="loader"></div>
+		</div>
+
 		<slot />
 
 		<main class="container">
@@ -40,13 +44,13 @@ import '../css/style.css';
 			</p>
 		</footer>
 
+		<script src="../js/general.js"></script>
 		<script
 			type="text/javascript"
 			async
 			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"
 		></script>
 		<script>
-
 			const header = document.querySelector('.header');
 			const menu = document.querySelector('.nav');
 			const showMenu = document.querySelector('.open');
@@ -54,16 +58,18 @@ import '../css/style.css';
 			const footer = document.querySelector('.footer');
 			const buttons = document.querySelector('.navpages');
 
-		
-			showMenu.addEventListener('click', () =>{
-				menu.classList.toggle('active')
-				showMenu.classList.toggle('active')
-				container.classList.toggle('active')
-				header.classList.toggle('active')
-				footer.classList.toggle('active')
-				buttons.classList.toggle('active')
-			})
-		
+			showMenu.addEventListener('click', () => {
+				menu.classList.toggle('active');
+				showMenu.classList.toggle('active');
+				container.classList.toggle('active');
+				header.classList.toggle('active');
+				footer.classList.toggle('active');
+				buttons.classList.toggle('active');
+			});
+
+			window.addEventListener('load', function () {
+				document.querySelector('#preloader').classList.toggle('loaded');
+			});
 		</script>
 	</body>
 </html>

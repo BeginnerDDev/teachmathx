@@ -24,27 +24,25 @@ const { titleA, titleS, title, enlace, enlaceI} = Astro.props;
 		--offset: 16px;
 		font-family: sans-serif;
 		text-transform: uppercase;
-		letter-spacing: 0.25px;
-		margin-top: 1rem;
-		font-size: 0.95rem;
+		font-size: 0.825rem;
 		position: absolute;
-		top: 225px;
-		left: 525px;
+		top: 32.3%;
+		left: 32.5%;
 		z-index: 100;
 		transition: left 500ms;
 	}
 
 	.navpages.active {
-		left: 375px;
+		left: 23.5%;
 	}
 
-	@supports (width: fit-content) {
+	/* @supports (width: fit-content) {
 		.navpages {
 			width: -moz-fit-content;
 			width: fit-content;
 			margin: 1rem auto auto;
 		}
-	}
+	} */
 
 	.navpages a {
 		background: var(--bgcolor);
@@ -131,13 +129,13 @@ const { titleA, titleS, title, enlace, enlaceI} = Astro.props;
 		display: flex;
 	}
 
-	@media (max-width: 800px) {
+	/* @media (max-width: 800px) {
 		.navpages .prev-next {
 			flex-direction: column;
 			align-items: center;
 			display: flex;
 		}
-	}
+	} */
 
 	.navpages .prev-next a:not(.current):first-child {
 		clip-path: var(--prev-arrow);
@@ -149,25 +147,24 @@ const { titleA, titleS, title, enlace, enlaceI} = Astro.props;
 		z-index: 5;
 		letter-spacing: -1px;
 		width: var(--current-width);
-		margin: 0 1.5rem;
-		padding: 0 2rem;
+		margin-inline: 1.5rem;
+		padding-inline: 2rem;
 		font-weight: 650;
 		transform: scale(1.2);
 	}
-
+/* 
 	@media (max-width: 850px) {
 		.navpages .prev-next a.current {
 			padding: initial;
 			margin: initial;
 		}
-	}
+	} */
 
 	.navpages .prev-next a.current ~ a {
 		clip-path: var(--next-arrow);
 	}
 
 	.navpages .prev-next a {
-		text-wrap: balance;
 		width: var(--prev-next-width);
 		letter-spacing: -0.5px;
 		justify-content: center;
