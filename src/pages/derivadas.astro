@@ -8,15 +8,18 @@ import Modal from '../components/modal.astro';
 
 <Layout pageTitle="Derivadas" pageDescription="">
 	<Menu
-		temario_1="Conceptos"
-		temario_2="Tipos"
-		temario_3="Características"
-		temario_4="Ejemplos"
-		temario_5="Aplicación"
+		temario_1="¿Qué es la derivada?"
+		id1='#que_es_la_derivada'
+		temario_2="Fórmula de las derivadas"
+		id2='#formula-de-las-derivadas'
+		temario_3="Reglas de Derivadas"
+		id3='#reglas-de-derivadas'
+		temario_4="Reglas de la Cadena"
+		id4='#reglas-de-la-cadena'
 		prev="continuidad"
 		home="/"
 		next="nosotros"
-		href='testDerivadas'
+		href="testDerivadas"
 	/>
 
 	<Header title="Derivadas" />
@@ -30,20 +33,349 @@ import Modal from '../components/modal.astro';
 	/>
 
 	<section slot="main">
+		<section class="content">
+			<h2 class="title" id="que_es_la_derivada">¿Qué es la derivada?</h2>
+
+			<p>
+				Las derivadas son reglas matemáticas que sirven para estudiar
+				las funciones. En particular, la derivada de una función en un
+				punto es el resultado de un límite e indica el comportamiento de
+				la función en ese punto. La derivada de una función se expresa
+				con el signo prima ‘, es decir, la función f'(x) es la derivada
+				de la función f(x). <br />
+				<br />
+
+				 Geométricamente, el significado de la derivada de una función en
+				un punto es la pendiente de la recta tangente a la función en ese
+				punto.
+			</p>
+
+			<picture class="content__image">
+				<img src="e1.png" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				La definición matemática de la derivada de una función es la
+				siguiente:
+			</p>
+
+			<picture class="content__image">
+				<img src="e2.png" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				Para toda <span>\(x\)</span>, siempre que el límite exista y se
+				reprenta por:
+			</p>
+
+			<picture class="content__image">
+				<img src="e3.png" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				Sin embargo, la derivada de una función no se suele calcular
+				utilizando la fórmula anterior, sino que se aplican reglas de
+				derivación según el tipo de función que sea. A continuación se
+				explican todas las fórmulas de derivación.
+			</p>
+
+			<h2 class="title" id="formula-de-las-derivadas">
+				Fórmulas de las derivadas
+			</h2>
+
+			<p>
+				Vista la definición de las derivadas, vamos a ver cómo se hacen
+				explicando cada tipo de derivada con un ejemplo. El objetivo de
+				este post es que entiendas bien el concepto de las derivadas,
+				por lo que si al final tienes dudas de cómo se deriva una
+				función puedes preguntarnos en los comentarios.
+			</p>
+
+			<h3 class="subtitle">Derivadas de una consciente:</h3>
+
+			<p>
+				La derivada de una constante siempre es igual a cero,
+				independientemente del valor de la constante.
+			</p>
+
+			<picture class="content__image">
+				<img src="e4.png" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				Por lo tanto, para hallar la derivada de una función constante
+				no es necesario hacer ningún cálculo, simplemente la derivada es
+				nula.
+
+				<br />
+				<br />
+				 Fíjate en los siguientes ejemplos resueltos de derivadas de
+				constantes:
+			</p>
+
+			<picture class="content__image">
+				<img src="e5.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<h3 class="subtitle">Derivada de una función lineal</h3>
+
+			<p>
+				La derivada de una función lineal es el coeficiente del término
+				de primer grado, es decir, la derivada de una función lineal
+				f(x)=Ax+B es igual a A
+			</p>
+
+			<picture class="content__image">
+				<img src="e6.png" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				Fíjate en los siguientes ejemplos resueltos de derivadas de
+				constantes:
+			</p>
+
+			<h3 class="subtitle">Derivada de una potencia</h3>
+			<p>
+				La derivada de una potencia, o función potencial, es el producto
+				del exponente de la potencia por la base elevada al exponente
+				menos 1.
+			</p>
+
+			<picture class="content__image">
+				<img src="e7.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				Por lo tanto, para derivar una potencia solamente tenemos que
+				multiplicar la función por el exponente y restarle una unidad al
+				exponente.
+			</p>
+
+			<p>Por ejemplo, la derivada de la potencia x elevada al cubo es:</p>
+
+			<picture class="content__image">
+				<img src="e8.png" alt="propiedades de los limites" />
+			</picture>
+
+			<h3 class="subtitle">Derivada de una raíz</h3>
+			<p>
+				La derivada de una raíz, o función irracional, es igual a uno
+				partido por el producto del índice de la raíz por la misma raíz
+				restándole 1 al exponente del radicando.
+			</p>
+
+			<picture class="content__image">
+				<img src="e9.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				A modo de ejemplo, seguidamente puedes ver resuelta la derivada
+				de la raíz cuadrada de x:
+			</p>
+
+			<picture class="content__image">
+				<img src="e10.png" alt="propiedades de los limites" />
+			</picture>
+
+			<h3 class="subtitle">Derivada de una función exponencial</h3>
+			<p>
+				La derivada de una función exponencial depende de si la base es
+				el número e o cualquier otro número. De manera que hay dos
+				fórmulas para derivar este tipo de funciones y deberemos
+				utilizar la que corresponda según la base de la potencia:
+			</p>
+
+			<picture class="content__image">
+				<img src="e11.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				A continuación puedes ver dos derivadas resueltas de este tipo
+				de funciones:
+			</p>
+
+			<picture class="content__image">
+				<img src="e12.png" alt="propiedades de los limites" />
+			</picture>
+
+			<h3 class="subtitle">Derivada de una función logarítmica</h3>
+			<p>
+				La derivada de una función logarítmica depende de la base del
+				logaritmo, ya que si el logaritmo es natural se debe aplicar una
+				fórmula para hallar la derivada y si el logaritmo tiene como
+				base otro número se debe usar otra regla.
+			</p>
+
+			<picture class="content__image">
+				<img src="e13.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<p>Por ejemplo, la derivada del logaritmo en base tres de x es:</p>
+
+			<picture class="content__image">
+				<img src="e14.png" alt="propiedades de los limites" />
+			</picture>
+
+			<h3 class="subtitle">Derivadas trigonométricas</h3>
+			<p>
+				Las tres derivadas trigonométricas principales son la derivada
+				de la función seno, de la función coseno y de la función
+				tangente, cuyas fórmulas son las siguientes:
+			</p>
+
+			<picture class="content__image">
+				<img src="e15.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				Lógicamente, existen más tipos de funciones trigonométricas,
+				como por ejemplo la función secante, la cosecante, la
+				cotangente, las funciones trigonométricas hiperbólicas, las
+				funciones trigonométricas inversas, etc. Pero las reglas más
+				utilizadas para derivar son estas tres de arriba.
+			</p>
+
+			<h2 class="title" id="reglas-de-derivadas">Reglas de derivadas</h2>
+
+			<p>
+				Cuando tenemos operaciones con funciones las derivadas se
+				resuelven de manera diferente. Para ello, debemos emplear la
+				reglas de derivación, que nos permiten derivar sumas, restas,
+				multiplicaciones y divisiones de funciones.
+			</p>
+
+			<picture class="content__image">
+				<img src="e16.png" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				Por lo tanto, para resolver derivadas con operaciones no solo
+				tenemos que aplicar las reglas de derivación, sino que también
+				debemos utilizar la fórmula de cada tipo de derivada.
+			</p>
+			<br />
+			<p>
+				Para que veas cómo hallar este tipo de derivadas, vamos a
+				resolver varios ejercicios a continuación:
+			</p>
+
+			<h4>Derivada de una suma:</h4>
+
+			<picture class="content__image">
+				<img src="e17.png" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				Como puedes ver, para resolver la derivada de toda la función se
+				ha aplicado la fórmula de la derivada de una potencia a cada
+				término de la suma.
+			</p>
+
+			<h4>Derivada de un producto:</h4>
+
+			<picture class="content__image">
+				<img src="e18.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				La derivada del primer término del producto es 4x·ln(4), y la
+				derivada del seno es el coseno. Por lo tanto, la derivada de la
+				multiplicación es:
+			</p>
+
+			<picture class="content__image">
+				<img src="e19.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<h4>Derivada de un cociente:</h4>
+
+			<picture class="content__image">
+				<img src="e20.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				Tanto en el numerador como en el denominador de la fracción
+				tenemos un polinomio, así que para sacar la derivada debemos
+				utilizar la fórmula de la derivada de un cociente, la fórmula de
+				la derivada de una suma (o resta) y la fórmula de la derivada de
+				una potencia:
+			</p>
+
+			<picture class="content__image">
+				<img src="e21.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<h2 class="title" id="reglas-de-la-cadena">Reglas de la Cadena</h2>
+
+			<p>
+				La regla de la cadena es una fórmula que sirve para derivar
+				funciones compuestas. La regla de la cadena establece que la
+				derivada de una función compuesta f(g(x)) es igual a la derivada
+				f'(g(x)) multiplicada por la derivada g'(x).
+			</p>
+
+			<picture class="content__image">
+				<img src="e22.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				Este concepto de las derivadas normalmente es más difícil de
+				asimilar, por lo que resolveremos un ejercicio paso a paso a
+				modo de ejemplo:
+			</p>
+
+			<picture class="content__image">
+				<img src="e23.png" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				Efectivamente, se trata de una composición de funciones porque
+				tenemos la función x3 dentro de la función seno, por lo tanto,
+				tenemos que usar la regla de la cadena para hallar la derivada
+				de la función compuesta.
+			</p>
+			<br />
+
+			<p>
+				Por una parte, la derivada del seno es el coseno, por lo que la
+				derivada de la función de afuera será el coseno con el mismo
+				argumento del seno:
+			</p>
+
+			<picture class="content__image">
+				<img src="e24.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				Y, por otra parte, calculamos la derivada de x3 usando la
+				fórmula de la derivada de una potencia:
+			</p>
+
+			<picture class="content__image">
+				<img src="e25.svg" alt="propiedades de los limites" />
+			</picture>
+
+			<p>
+				De manera que la derivada de toda la función compuesta es el
+				producto de ambas derivadas:
+			</p>
+
+			<picture class="content__image">
+				<img src="e26.svg" alt="propiedades de los limites" />
+			</picture>
+		</section>
+
 		<Modal
 			titleSeccion="Videos Relacionados"
 			descripcionSeccion="Aqui podras ver videos relacionados con las Derivadas 😱"
-
 			img1="https://i3.ytimg.com/vi/uK4-s0ojHFg/maxresdefault.jpg"
 			iframe1="https://www.youtube.com/embed/uK4-s0ojHFg?si=ft6gIVva0A5yPtza"
 			title1="Qué es la derivada? | Concepto de derivada"
 			descripcion1="Explicación de que es la derivada o el concepto de derivada explicándolo como la velocidad en un punto, teniendo en cuenta los incrementos, empezando con el concepto de velocidad media hasta llegar al concepto de derivada de una función, dentro del curso de Derivadas."
-
 			img2="https://i3.ytimg.com/vi/sR5KYTap0Cg/maxresdefault.jpg"
 			iframe2="https://www.youtube.com/embed/sR5KYTap0Cg?si=LfcHW4T7A2eJhb0a"
 			title2="DERIVADA DE UNA FUNCIÓN USANDO LA DEFINICIÓN"
 			descripcion2="explica cómo derivar una función usando el límite que corresponde a la definición de derivada."
-
 			img3="https://i3.ytimg.com/vi/aVNa-J8iB5I/maxresdefault.jpg"
 			iframe3="https://www.youtube.com/embed/aVNa-J8iB5I?si=ysIB6mcbfTjagLRv"
 			title3="REGLAS DE DERIVACIÓN"

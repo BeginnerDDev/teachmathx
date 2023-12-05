@@ -180,9 +180,6 @@ body {
   margin-block: 20px;
   font-weight: 500;
 }
-.container .content .espacio {
-  margin: 15px 0;
-}
 .container .content__image {
   margin-block: 50px;
   display: flex;
@@ -194,6 +191,10 @@ body {
 }
 .container .content__image img[src^=propiedad] {
   width: 750px;
+}
+.container .content__image img[src$=".svg"] {
+  fill: #fff;
+  stroke: #fff;
 }
 .container .content__image .bloque {
   width: 500px;

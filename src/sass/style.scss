@@ -140,6 +140,11 @@ body {
                 &[src^="propiedad"] {
                     width: 750px;
                 }
+
+                &[src$=".svg"] {
+                    fill: #fff;
+                    stroke: #fff;
+                }
             }
 
             .bloque {
