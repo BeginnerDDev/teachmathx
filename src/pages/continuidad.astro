@@ -1,49 +1,337 @@
 ---
-import Header from '../components/header.astro';
-import Layout from '../components/layout.astro';
-import Menu from '../components/menu.astro';
-import Botones from '../components/botones.astro';
-import Modal from '../components/modal.astro';
+import Header from "../components/header.astro";
+import Layout from "../components/layout.astro";
+import Menu from "../components/menu.astro";
+import Botones from "../components/botones.astro";
+import Modal from "../components/modal.astro";
 ---
 
 <Layout pageTitle="Continuidad" pageDescription="">
-	<Menu
-		temario_1="Conceptos"
-		temario_2="Tipos"
-		temario_3="Características"
-		temario_4="Ejemplos"
-		temario_5="Aplicación"
-		prev="limites"
-		home="/"
-		next="derivadas"
-	/>
+  <Menu
+    temario_1="¿Qué es la continuidad?"
+		id1="#que-es-la-continuidad"
+    temario_2="¿Cómo obtener la continuidad"
+		id2="#Cómo-obtener-la-continuidad"
+    temario_3="Tipos"
+		id3="#tipos"
+    temario_4="Propiedades"
+		id4="#propiedades"
+		temario_5="Continuidad de una Función"
+		id5="#continuidad-de-una-funcion"
+    prev="limites"
+    home="/"
+    next="derivadas"
+    href="testContinuidad"
+  />
 
-	<Header title="Continuidad" />
+  <Header title="Continuidad" />
 
-	<Botones
-		titleA="Limites"
-		enlaceI="/"
-		title="Continuidad"
-		titleS="Derivadas"
-		enlace="continuidad"
-	/>
+  <Botones
+    titleA="Limites"
+    enlaceI="/"
+    title="Continuidad"
+    titleS="Derivadas"
+    enlace="continuidad"
+  />
 
-	<section slot="main">
-		<Modal
-			titleSeccion="Videos Relacionados"
-			descripcionSeccion="Aqui podras ver videos relacionados con las Funciones 😱"
-			img1="https://i3.ytimg.com/vi/Ll7xfe3HoZE/maxresdefault.jpg"
-			iframe1="https://www.youtube.com/embed/Ll7xfe3HoZE?si=k-V441Snh9YJXrL2"
-			title1="Funciones"
-			descripcion1="Explicación de los conceptos de relación y función, con algunos ejemplos con conjuntos, dentro del curso de Funciones."
-			img2="https://i3.ytimg.com/vi/bEcZu7HSijw/maxresdefault.jpg"
-			iframe2="https://www.youtube.com/embed/bEcZu7HSijw?si=kGbDnYuv5noIwaGm"
-			title2="¿QUÉ es UNA FUNCIÓN?"
-			descripcion2="En este video estudiaremos en detalle el CONCEPTO DE FUNCIÓN, pero para entender mejor esta idea, primero tenemos que revisar conceptos previos como: par ordenado, producto cartesiano, relaciones y finalmente funciones."
-			img3="https://i3.ytimg.com/vi/onh9C8dv9x4/maxresdefault.jpg"
-			iframe3="https://www.youtube.com/embed/onh9C8dv9x4?si=UyXlGAprHtpnjDVA"
-			title3="Funciones"
-			descripcion3="En el video, veremos cómo identificar si una gráfica representa o no a una función o a una relación, así como definir los conjuntos de dominio y rango."
-		/>
-	</section>
+  <section slot="main">
+    <section class="content">
+        <h2 class="title" id="que-es-la-continuidad">¿Qué es la continuidad de una función?</h2>
+			
+				<p>
+          En matemáticas, la continuidad de una función es una propiedad
+          fundamental que describe cómo se comporta la función en relación con
+          los valores cercanos de su dominio. Así, una función se considera
+          continua si no presentasaltos, puntos indefinidos o discontinuidades en su gráfica.
+        </p>
+				<br>
+				<p>
+          Más formalmente, una función f(x) se dice continua en un punto “a” si
+          se cumplen tres condiciones:
+        </p>
+				<br>
+				<p>
+          • El límite de f(x) cuando x se aproxima a “a” existe, es decir, los límites laterales en el punto “a” coinciden.
+        </p>
+				<p>
+					• El valor de f(a) está definido.
+				</p>
+		
+				<p>
+          • El límite de f(x) cuando x se aproxima a “a” es igual a f(a).
+        </p>
+				<br>
+				<p>
+          Simplificando, una función es continua si su gráfica puede dibujarse
+          sin levantar el lápiz, es decir, no tiene agujeros, saltos o
+          interrupciones. Esto implica que la función no tiene discontinuidades
+          abruptas en su gráfica y que los valores de la función se acercan
+          gradualmente a medida que los valores de x se acercan.
+        </p>
+				<br>
+				<picture class="content__image">
+          <img
+            src="racional.webp"
+          />
+        </picture>
+				<h2 class="title">Dominio y Continuidad</h2>
+				<p>
+          El dominio de una función y su continuidad están estrechamente
+          relacionados, pues para que una función sea continua en un punto, ese
+          punto debe pertenecer al dominio de la función. Si un punto está
+          excluido del dominio de la función, no se puede evaluar y, por lo tanto, no tiene sentido hablar de su
+          continuidad en ese punto.
+        </p>
+				<br>
+				<h2 class="title" id="Cómo-obtener-la-continuidad">¿Cómo obtener la continuidad de una función?</h2>
+				<p>
+          Para determinar la continuidad de una función en un punto “a”, puedes
+          seguir los siguientes pasos:
+        </p>
+				<br>
+				<p class="espacio">
+          <strong
+            >Verificar si la función está definida en el punto de interés:</strong
+          > Comprueba si el valor de x en el punto dado está dentro del dominio
+          de la función. Si la función no está definida en ese punto, no se
+          puede hablar de continuidad en ese punto.
+        </p>
+				<p class="espacio">
+          <strong>Evaluar los límites laterales:</strong> Calcula el límite de
+          la función cuando x se aproxima al punto de interés desde la izquierda
+          y desde la derecha. Si ambos límites laterales existen y son iguales,
+          es decir, si los límites laterales coinciden, se cumple la primera
+          condición para la continuidad.
+        </p>
+				<p class="espacio">
+          <strong>Evaluar el valor de la función en el punto:</strong> Comprueba
+          si el valor de la función en el punto de interés está definido. Si no
+          está definido, la función no es continua en ese punto.
+        </p>
+				<p class="espacio"> 
+          <strong>Comparar el límite con el valor de la función:</strong>
+          Verifica si el límite de la función cuando x se acerca al punto de
+          interés es igual al valor de la función en ese punto. Si ambos valores
+          coinciden, se cumple la tercera condición para la continuidad.
+        </p>
+				<br>
+				<p>
+          Si todos estos pasos se cumplen, entonces la función es continua en el
+          punto “a”.
+        </p>
+				<br>
+				<p>
+          Para determinar si la función es continua en todo su dominio, debes
+          repetir estos pasos para cada punto dentro del dominio. Como estudiar
+          la continuidad en infinitos puntos es materialmente imposible, para
+          estudiar la continuidad en el dominio de una función debemos aprender
+          reglas para las diferentes funciones para saber directamente en qué
+          puntos podemos o no encontrar discontinuidades, y estudiar solo estos
+          puntos.&nbsp;
+        </p>
+
+				<br>
+				<h2 class="title">¿Se puede calcular la continuidad sin hacer los limites laterales?</h2>
+				<p>
+          No, para determinar la continuidad de una función en un punto
+          específico x=a, es necesario calcular los límites laterales.
+        </p>
+
+				<br>
+				<h2 class="title" id="tipos">¿Qué tipos de discontinuidades hay?</h2>
+				<p>
+          Cada tipo de discontinuidad implica un comportamiento particular en un
+          punto o en un conjunto de puntos de una función, siendo los
+          principales tipos los siguientes:
+        </p>
+				<br>
+				<p class="espacio">
+          <strong>Discontinuidad evitable o punto removible:</strong> Ocurre
+          cuando la función tiene un agujero o un hueco en un punto específico,
+          pero se puede “rellenar” o corregir asignando un valor adecuado en ese
+          punto. Matemáticamente, esto ocurre cuando los límites laterales
+          coinciden, pero el valor de la función en el punto no.
+        </p>
+				<p class="espacio">
+          <strong>Discontinuidad inevitable de salto finito:</strong> Ocurre
+          cuando la función tiene un salto abrupto en un punto. En este tipo de
+          discontinuidad, los límites laterales existen en el punto, pero no son
+          iguales, provocando una interrupción o salto en la gráfica de la
+          función.
+        </p>
+				<p class="espacio">
+          <strong>Discontinuidad inevitable de salto infinito:</strong> Ocurre
+          cuando la función tiene al menos un límite lateral infinito o menos
+          infinito en un punto. Esto genera una discontinuidad vertical en la
+          gráfica de la función y una posterior asíntota vertical.
+        </p>
+				<br>
+				<p >
+          Es importante tener en cuenta que, en la práctica, las funciones
+          pueden tener combinaciones de estos tipos de discontinuidades y pueden
+          presentar comportamientos más complicados.&nbsp;
+        </p>
+				
+				<br>
+				<h2 class="title" id="propiedades">Propiedades de las funciones continuas</h2>
+				<p>
+          Las operaciones algebraicas (suma, resta, multiplicación) de funciones
+          continuas también resultan en funciones continuas. Por ejemplo, cada
+          término individual en un polinomio es una función continua.
+        </p>
+				<br>
+				<p>
+          La multiplicación de una función continua por una constante también
+          resulta en una función continua, pues la constante puede verse como
+          una función continua en sí misma.&nbsp;
+        </p>
+				<br>
+				<p>
+          La composición de funciones continuas también es continua.
+        </p>
+				<br>
+				<picture class="content__image">
+          <img
+            src="discontinuidades.webp"
+          />
+        </picture>
+				
+				<br>
+				<h2 class="title" id="continuidad-de-una-funcion">¿Cuál es la continuidad de una función polinómica?</h2>
+				<p>
+          Las funciones polinómicas son ejemplos de funciones continuas, ya que
+          son suma de monomios dados por una constante multiplicada por x
+          elevado a una cierta potencia, luego es la suma de funciones
+          continuas. Además, como el dominio de un polinomio es toda la recta
+          real, estos son continuos en todos los puntos de R.
+        </p>
+				
+				<br>
+				<h2 class="title">¿Cuál es la continuidad de una función racional?</h2>
+					<p>
+          La continuidad de una función racional, f(x) = P(x) / Q(x), donde P(x)
+          y Q(x) son polinomios y Q(x); depende de su dominio y de los puntos en
+          los que pueda haber discontinuidades, debiendo distinguir dos
+          situaciones:
+        </p>
+				<br>
+				<p class="espacio">
+         <strong>Discontinuidades evitables:</strong>  Si el denominador Q(x) tiene raíces
+          comunes con el numerador P(x), es posible que se produzcan
+          discontinuidades evitables en los puntos donde el numerador y el
+          denominador se anulen simultáneamente. Estos puntos de anulación
+          pueden generar agujeros o huecos en la gráfica de la función.&nbsp;
+        </p>
+				<p class="espacio">
+         <strong>Discontinuidades inevitables de salto infinito:</strong> Si el denominador Q(x)
+          tiene raíces que no son compartidas por el numerador P(x), se
+          generarán discontinuidades no evitables de salto infinito, denotadas
+          gráficamente por asíntotas verticales en dichos puntos.
+        </p>
+				
+				<br>
+				<h2 class="title">¿Cuál es la continuidad de una función radical?</h2>
+				<p>
+          La continuidad de una función radical, f(x) = g(x)^(1/n), donde g(x)
+          es una función continua y n es un número natural; depende del índice
+          de la raíz (n), el radicando (g(x)) y el dominio de la función.&nbsp;
+        </p>
+				<br>
+				<p>
+          Si el índice de la función es par, el dominio será solo los números
+          para los que g(x) es positiva, luego la función será continua en dicho
+          intervalo. Si el índice de la función es impar, el dominio será toda
+          la recta real, y la función radical será continua en R.
+        </p>
+				
+				<br>
+				<h2 class="title">¿Cuál es la continuidad de una función sinusoidal?</h2>
+				<p>
+          La continuidad de una función sinusoidal, f(x) = A*sin(g(x)), donde A
+          es una constante; depende de la función en su argumento g(x).
+          Asumiendo que ésta es continua, entonces como su dominio son todos los
+          números reales, la función sinusoidal es una función continua en R.
+        </p>
+				
+				<br>
+				<h2 class="title">¿Cuál es la continuidad de una función exponencial?</h2>
+				<p>
+          La continuidad de una función exponencial, f(x) = a^g(x), donde "a" es
+          una constante positiva; depende de la función en su argumento g(x).
+          Asumiendo que ésta es continua, entonces como su dominio son todos los
+          números reales, la función sinusoidal es una función continua en R.
+        </p>
+				
+				<br>
+				<h2 class="title">¿Cuál es la continuidad de una función logarítmica?</h2>
+				<p>
+          La continuidad de una función logarítmica, f(x) = log_a(g(x)), donde "a" es la base del logaritmo; depende de
+          su dominio y de laspropiedades del logaritmo, pues su dominio son solo los valores de x para los que g(x)&gt;0.
+          De esta forma, si g(x) es continua en dicho intervalo, la función
+          logarítmica también lo será.
+        </p>
+				
+				<br>
+				<h2 class="title">¿Para qué sirve conocer la continuidad de una función?</h2>
+				<p>
+          Conocer la continuidad de una función es fundamental en el análisis y
+          estudio de funciones matemáticas, ya que proporciona información
+          valiosa sobre su comportamiento y propiedades en diferentes puntos y
+          rangos de su dominio:
+        </p>
+				<br>
+				<p class="espacio">
+          <strong>Análisis del comportamiento local:</strong> La continuidad de
+          una función en un intervalo nos permite analizar su comportamiento
+          local en ese intervalo. Si una función es continua en un intervalo,
+          podemos examinar su tendencia, cambios de signo, existencia de máximos
+          y mínimos locales, y otros aspectos relevantes.
+        </p>
+				<p class="espacio">
+          <strong>Graficación:</strong> La continuidad de una función tiene un
+          impacto directo en la apariencia de su gráfica. Una función continua
+          muestra una curva suave y sin quiebres, mientras que las
+          discontinuidades generan saltos, agujeros o comportamientos
+          irregulares en la gráfica. Conocer la continuidad de una función nos
+          ayuda a trazar su gráfica de manera más precisa y a comprender su
+          forma general.
+        </p>
+				<p class="espacio">
+          <strong>Aplicaciones en problemas reales:</strong> Muchos problemas en
+          ciencias, ingeniería, economía y otras disciplinas se pueden modelar y
+          resolver mediante funciones matemáticas. La continuidad de una función
+          en el contexto de un problema real es esencial para asegurar que el
+          modelo sea válido y que las soluciones obtenidas sean significativas y
+          coherentes con la situación planteada.
+        </p>
+				<p class="espacio">
+          <strong>Teoremas y propiedades:</strong> En el análisis matemático,
+          existen teoremas y propiedades que se basan en la continuidad de una
+          función, como pueden ser el teorema de Bolzano, el del valor
+          intermedio o el del valor medio. Estos teoremas y propiedades
+          proporcionan herramientas poderosas para resolver problemas y
+          demostrar resultados importantes.
+        </p>
+				<p class="espacio">
+          <strong>Derivación e integración:</strong> si una función no es
+          continua en un punto dado, entonces no podemos calcular su derivadaen dicho punto. Además, tampoco podemos calcular su integralen un intervalo que contenga al punto de discontinuidad. Por ende, la continuidad es una condición necesaria muy importante para calcular rectas tangentes y área por debajo de funciones.
+        </p>
+    </section>
+    <Modal
+      titleSeccion="Videos Relacionados"
+      descripcionSeccion="Aqui podras ver videos relacionados con las Continuidad 😱"
+      img1="https://i3.ytimg.com/vi/Yb-lUhwxRKA/maxresdefault.jpg"
+      iframe1="https://www.youtube.com/embed/Yb-lUhwxRKA?si=FOscVY5UF-rvKoL2"
+      title1="CONTINUIDAD DE UNA FUNCIÓN "
+      descripcion1="En el vídeo se expone la definición de CONTINUIDAD DE UNA FUNCIÓN mediante problemas resueltos. Además, se muestran ejemplos y ejercicios resueltos sobre continuidad de una función. De igual forma, se evidencia el concepto y definición de la continuidad de una función en un punto c, mediante problemas resueltos de continuidad de una función específica."
+      img2="https://i3.ytimg.com/vi/jowIyyRFKUw/maxresdefault.jpg"
+      iframe2="https://www.youtube.com/embed/jowIyyRFKUw?si=6q8_7lZj-HJRXl6L"
+      title2="ESTUDIO DE LA CONTINUIDAD DE UNA FUNCIÓN DEFINIDA A TROZOS"
+      descripcion2="Cómo se estudia la continuidad de las funciones que están definidas a trozos. En los puntos problemáticos en donde puede no darse la continuidad se estudiamos si se verifica la existencia de los límites laterales en dicho punto y su valor coincide con el de la función en ese punto de estudio."
+      img3="https://i3.ytimg.com/vi/UsfRAEY3Rs8/maxresdefault.jpg"
+      iframe3="https://www.youtube.com/embed/UsfRAEY3Rs8?si=9g4vhPTKWn5_c8vQ"
+      title3="Funciones Definidas a Trozos CONTINUAS"
+      descripcion3="Estudio de continuidad en funciones definidas A TROZOS. Ejemplos de funciones a trozos CONTINUAS con varios PUNTOS DE RUPTURA y representación GRÁFICA de las funciones."
+    />
+  </section>
 </Layout>
