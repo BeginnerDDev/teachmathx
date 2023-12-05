@@ -14,109 +14,109 @@ let questionsD = [
 	{
 		id: 2,
         image: 'd-2.png',
-		question: 'Halla la derivada',
-		answer: 'a) -2/x^2',
+		question: 'Deriva la función',
+		answer: 'a) 6x + 7',
 		options: [
-			'a) -2/x^2', 
-			'b) -2/X^3', 
-			'c) 2/x^2', 
-			'd) 2/x^3'
+			'a) 6x + 7', 
+			'b) 6x^2 + 7', 
+			'c) 6x + 5 ', 
+			'd) 3x^2 + 7'
 		],
 	},
 	{
 		id: 3,
         image: 'd-3.png',
 		question: 'Deriva la función',
-		answer: 'a) Todos los números reales excepto x = 0',
+		answer: 'd)  e^x',
 		options: [
-			'a) 2e^2x', 
-			'b) e^2x', 
-			'c) 2e^2x', 
-			'd) e'
+			'a) 1', 
+			'b) e^x 2}', 
+			'c) x cdot e^x', 
+			'd)  e^x'
 		],
 	},
 	{
 		id: 4,
         image: 'd-4.png',
-		question: 'Encuentra la derivada',
-		answer: 'b) 49',
+		question: 'Deriva la función ',
+		answer: 'c) 1/x',
 		options: [
-			'a) 31', 
-			'b) 49', 
-			'c) 59', 
-			'd) 48'
+			'a) ln(x^2)', 
+			'b) x/ln(x)', 
+			'c) 1/x', 
+			'd) 1'
 		],
 	},
 	{
 		id: 5,
         image: 'd-5.png',
 		question: 'Deriva la función',
-		answer: 'a) y ≥ 0',
+		answer: 'c) sec^2(x)',
 		options: [
-			'a) y ≥ 0', 
-			'b) y > 0', 
-			'c) y ≤ 2', 
-			'd) y ≥ 2'
+			'a) cos^2(x)', 
+			'b) sin^2(x)', 
+			'c) sec^2(x)', 
+			'd) 1 + tan^2(x)'
 		],
 	},
 	{
 		id: 6,
         image: 'd-6.png',
 		question: '',
-		answer: 'a) 1',
+		answer: 'a) -frac{1}{x^2}',
 		options: [
-			'a) 1', 
-			'b) 2', 
-			'c) 3', 
-			'd) 4'
+			'a) -frac{1}{x^2}', 
+			'b) frac{1}{2x} ', 
+			'c) -frac{1}{2x^2}', 
+			'd) frac{1}{x^2}'
 		],
 	},
 	{
 		id: 7,
         image: 'd-7.png',
 		question: '',
-		answer: 'a) p^-1(x) = ln(x)',
+		answer: 'd) frac{1}{2sqrt{x}}',
 		options: [
-			'a) p^-1(x) = ln(x)', 
-			'b) p^-1(x) = x^2', 
-			'c) p^-1(x) = sin(x)', 
-			'd) p^-1(x) = 1/x'
+			'a) frac{1}{sqrt{x}}', 
+			'b) 2sqrt{x}', 
+			'c) sqrt{x}', 
+			'd) frac{1}{2sqrt{x}}'
 		],
 	},
 	{
 		id: 8,
         image: 'd-8.png',
 		question: '',
-		answer: 'c) 5',
+		answer: 'c) -sin(x)',
 		options: [
-			'a) 3', 
-			'b) 4', 
-			'c) 5', 
-			'd) 7'
+			'a) -cos(x)', 
+			'b) cos(x)', 
+			'c) -sin(x)', 
+			'd) sin(x)'
 		],
 	},
 	{
 		id: 9,
         image: 'd-9.png',
 		question: 'Encuentra la derivada',
-		answer: 'b) 2',
+		answer: 'a) 3x^2 - 4',
 		options: [
-			'a) 10', 
-			'b) 2', 
-			'c) e', 
-			'd) 5'
+			'a) 3x^2 - 4', 
+			'b) x^3 - 4', 
+			'c) 3x^2 - 4x', 
+			'd) 3x^3 - 4'
 		],
 	},
 	{
 		id: 10,
         image: 'd-10.png',
 		question: 'Halla la derivada',
-		answer: 'b) 2π',
+		answer: 'a) frac{1}{x ln(10)}',
 		options: [
-			'a) π', 
-			'b) 2π', 
-			'c) π/2', 
-			'd) 3π/2'
+			'a) frac{1}{x ln(10)}', 
+			'b) log(x^2)', 
+			'c) frac{1}{ln(x)} ', 
+			'd) frac{1}{x} '
 		],
 	}
 ];
