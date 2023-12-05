@@ -161,11 +161,24 @@ body {
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
 }
 .container .content .subtitle {
+  line-height: 2.5;
   font-size: 19px;
   font-weight: 400;
 }
-.container .content .subtitle span {
+.container .content .subtitle .num {
+  width: 30px;
+  height: 30px;
   font-size: 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #202020;
+  background: #fff;
+  border-radius: 50%;
+}
+.container .content .tit {
+  margin-block: 20px;
+  font-weight: 500;
 }
 .container .content__image {
   margin-block: 50px;

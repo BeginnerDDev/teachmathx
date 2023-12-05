@@ -127,11 +127,152 @@ import Modal from '../components/modal.astro';
 			<picture class="content__image">
 				<img src="propiedad-limites.png" alt="propiedades de los limites">
 			</picture>
-
+			
 			<h2 class="title" id="tipos_de_limites">Tipos de límites</h2>
-			<p></p>
+			
+			<h3 class="subtitle">Límites Unilaterales</h3>
+			<p>
+				Un límite unilateral es exactamente lo que podría esperar; el límite de una función a medida que se acerca a un valor x específico desde el lado derecho o el lado izquierdo. Los límites unilaterales ayudan a lidiar con el tema de una discontinuidad de salto y los dos lados no coinciden.
+			</p>
+
+			<picture class="content__image">
+				<img src="lif-5.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>
+				
+			</p>
+
+			<h3 class="subtitle">Límites con funciones radicales: </h3>
+			
+			<p>
+				Son muchos los problemas que implicarán tomar la enésima raíz de una expresión variable, por lo que es natural que en ocasiones pueda haber la necesidad de encontrar el límite de una función que involucre expresiones radicales, usando raíces cuadradas o cubitas, u otras raíces. <br /> <br /> Al evaluar un límite que involucre una función radical, use la sustitución directa para ver si un límite puede ser evaluado siempre que sea posible. De no ser así, es necesario explorar otros métodos para evaluar el límite.
+			</p>
+
+			<picture class="content__image">
+				<img src="lif-1.png" alt="propiedades de los limites">
+			</picture>
+
+			<picture class="content__image">
+				<img src="lif-2.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>Por lo tanto,</p>
+			
+			<picture class="content__image">
+				<img src="lif-3.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>que se pudo haber determinado evaluando directamente <span>\(f(x)\)</span> a <span>\(x = 9\)</span>, es decir, usando sustitución directa.</p>
+
+			<h3 class="subtitle">Límite infinito: </h3>
+
+			<p>
+				La mayoría de las funciones continúan más allá de la ventana de visualización en nuestra calculadora o computadora. La gente suele dibujar una flecha junto a una línea punteada para indicar el patrón específicamente.
+			</p>
+
+			<h4 class="tit">Asintotas y comportamiento final de funciones</h4>
+
+			<p>
+				Una <strong>asíntota vertical</strong> es una línea vertical como <span>\(x = 1\)</span> que indica dónde no se define una función y, sin embargo, se acerca infinitamente a. <br /> <br /> Una <strong>asíntota horizontal </strong>es una línea horizontal como <span>\(y = 4\)\</span> que indica dónde se aplana una función a medida que x se vuelve muy grande o muy pequeña. Una función puede tocar o pasar a través de una asíntota horizontal. <br /> <br />La función recíproca tiene dos asíntotas, una vertical y otra horizontal. La mayoría de las computadoras y calculadoras no dibujan las asíntotas y por lo tanto deben insertarse a mano como líneas punteadas.
+			</p>
+
+			<picture class="content__image">
+				<img src="lif-4.png" alt="propiedades de los limites">
+			</picture>
 
 			<h2 class="title" id="ejemplos_de_limites">Ejemplos de límites</h2>
+
+			<h3 class="subtitle"> <span class="num">1</span> Calcula el límite:</h3>
+
+			<picture class="content__image">
+				<img src="lim-1.png" alt="propiedades de los limites">
+			</picture>
+
+			<h4 class="solucion">Solución: </h4>
+
+			<p>Deseamos encontrar el límite</p>
+
+			<picture class="content__image">
+				<img src="lim-2.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>Notemos, primero, que si "evaluamos en infinito", obtenemos una forma indeterminada:</p>
+
+			<picture class="content__image">
+				<img src="lim-3.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>Como el valor de <span>\(\infty - \infty\)</span> no está determinadado, necesitamos realizar una manipulación algebraica de nuestra función. <br /> <br /> Antes de hacer la manipulación algebraica, transformemos el límite utilizando la propiedad:</p>
+
+			<picture class="content__image">
+				<img src="lim-4.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>Con lo que el límite resulta ser:</p>
+			
+			<picture class="content__image">
+				<img src="lim-5.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>
+				Ahora necesitamos manipular algebraicamente los límites con el fin de eliminar la resta de infinitos. Esto se logra "racionalizando" (es decir, multiplicar y dividir por el conjugado):
+			</p>
+
+			<picture class="content__image">
+				<img src="lim-6.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>
+				Observemos que si evaluamos en infinito, volvemos a tener una nueva indeterminación. En este caso se trata de una indeterminación <span>\(\infty / \infty\)</span>. Para deshacernos de esta indeterminación debemos realizar otra manipulación algebraica. En este caso se trata de multiplicar y dividir por <span>\(1/x\)</span>
+			</p>
+
+			<picture class="content__image">
+				<img src="lim-7.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>El cual es el resultado que buscábamos.</p>
+
+			<h3 class="subtitle">
+				<span class="num">2</span> Calcula el siguiente límite:
+			</h3>
+
+			<picture class="content__image">
+				<img src="lim-8.png" alt="propiedades de los limites">
+			</picture>
+
+			<h4 class="solucion">Solución: </h4>
+
+			<p>Ahora tenemos el límite:</p>
+
+			<picture class="content__image">
+				<img src="lim-9.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>Notemos que si evaluamos en infinito directamente, obtenemos:</p>
+
+			<picture class="content__image">
+				<img src="lim-10.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>Para deshacernos de esta indeterminación podemos sumar las fracciones (utilizando el común denominador)</p>
+
+			<picture class="content__image">
+				<img src="lim-11.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>
+				Como ahora tenemos una indeterminación de la forma <span>\(\infty / \infty\)</span>, entonces buscaremos multiplicar y devidir por un término apropiado para evitar la indeterminación. El término apropiado es el monomio de mayor grado en el numerador o denominador, es decir, <span>\(1/x^2\)</span>. Por lo tanto, nos queda:
+			</p>
+			
+			<picture class="content__image">
+				<img src="lim-12.png" alt="propiedades de los limites">
+			</picture>
+
+			<p>
+				Por lo que el límite es <span>\(-1\)</span>.
+			</p>
+			
 
 		</section>
 

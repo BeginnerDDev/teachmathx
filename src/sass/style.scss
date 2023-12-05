@@ -106,12 +106,26 @@ body {
         }
 
         .subtitle {
+            line-height: 2.5;
             font-size: 19px;
             font-weight: 400;
 
-            span {
+            .num {
+                width: 30px;
+                height: 30px;
                 font-size: 19px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                color: #202020;
+                background: #fff;
+                border-radius: 50%;
             }
+        }
+
+        .tit {
+            margin-block: 20px;
+            font-weight: 500;
         }
 
         &__image {

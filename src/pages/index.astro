@@ -11,7 +11,7 @@ import '../css/index.css';
 			name="description"
 			content="TeachMathX es un sitio web dedicado al cálculo diferencial. En el podrás encontrar materiales relacionado a la asignatura, que te ayudará a mejorar en la misma."
 		/>
-		<link rel="shortcut icon" href="logo.svg" type="image/svg">
+		<link rel="shortcut icon" href="logo.svg" type="image/svg" />
 		<title>TeachMathX</title>
 	</head>
 
@@ -24,12 +24,6 @@ import '../css/index.css';
 						<span>TeachMathX</span>
 					</a>
 				</div>
-				<div class="header__dark">
-					<label class="toggle">
-						<input type="checkbox" id="sliderCheckbox" />
-						<small></small>
-					</label>
-				</div>
 			</div>
 		</header>
 	</body>
@@ -37,99 +31,149 @@ import '../css/index.css';
 	<nav class="nav">
 		<div class="nav__slider">
 			<div class="nav__item funciones">
-                <div class="nav__content">
-                    <span class="nav__materia">Cálculo Diferencial</span>
-                    <h2 class="nav__title">Funciones</h2>
-                    <p class="nav__description">
-                        Una función es como un puente entre dos mundos matemáticos. Representada como <span>\(y = f(x)\)</span> asigna a cada valor de la variable independiente <span>\(x\)</span> un valor único de la variable dependiente <span>\(y\)</span>. Estas funciones pueden describir una amplia gama de fenómenos, desde el movimiento de planetas hasta el crecimiento de poblaciones.
-                    </p>
-                    <div class="nav__btn">
-                        <a href="funciones" title="¿Quieres conocer más?">Aprender más</a>
-                        <a href="testFunciones" title="¿Deseas probar tus habilidades?">Tomar test</a>
-                    </div>
-                </div>
-                <div class="nav__subtitle">
-                    <div class="nav__subtitle--content">
-                        <span class="nav__subtitle--materia">Cálculo Diferencial</span>
-                        <h2 class="nav__subtitle--head">Funciones</h2>
-                    </div>
-                </div>
-            </div> <!--!Funciones-->
-            <div class="nav__item limites">
-                <div class="nav__content">
-                    <span class="nav__materia">Cálculo Diferencial</span>
-                    <h2 class="nav__title">Límites</h2>
-                    <p class="nav__description">
-                        Al observar el comportamiento de una función cerca de un punto específico, nos encontramos con el concepto de límites. El límite de una función en un punto es el valor al cual la función se aproxima a medida que la variable independiente se acerca a ese punto. Es como explorar las fronteras de lo posible en el mundo matemático.
-                    </p>
-                    <div class="nav__btn">
-                        <a href="limites">Aprender más</a>
-                        <a href="testLimites">Tomar test</a>
-                    </div>
-                </div>
-                <div class="nav__subtitle">
-                    <div class="nav__subtitle--content">
-                        <span class="nav__subtitle--materia">Cálculo Diferencial</span>
-                        <h2 class="nav__subtitle--head">Límites</h2>
-                    </div>
-                </div>
-            </div> <!--!Límites-->
-            <div class="nav__item continuidad">
-                <div class="nav__content">
-                    <span class="nav__materia">Cálculo Diferencial</span>
-                    <h2 class="nav__title">Continuidad</h2>
-                    <p class="nav__description">
-                        Imagina seguir el recorrido de una función sin saltos ni quiebres. Decimos que una función es continua si no hay interrupciones en su trayectoria. Esto implica que el valor de la función en un punto coincide con el valor al cual se acerca a medida que te acercas más a ese punto.
-                    </p>
-                    <div class="nav__btn">
-                        <a href="continuidad">Aprender más</a>
-                        <a href="testContinuidad">Tomar test</a>
-                    </div>
-                </div>
-                <div class="nav__subtitle">
-                    <div class="nav__subtitle--content">
-                        <span class="nav__subtitle--materia">Cálculo Diferencial</span>
-                        <h2 class="nav__subtitle--head">Continuidad</h2>
-                    </div>
-                </div>
-            </div> <!--!Continuidad-->
-            <div class="nav__item derivadas">
-                <div class="nav__content">
-                    <span class="nav__materia">Cálculo Diferencial</span>
-                    <h2 class="nav__title">Derivadas</h2>
-                    <p class="nav__description">
-                        La derivada de una función captura la esencia del cambio instantáneo. En términos más simples, es la tasa de cambio de una función en un punto específico. Visualmente, la derivada representa la inclinación de la tangente a la curva de la función en ese punto, proporcionando una visión detallada de cómo la función evoluciona.
-                    </p>
-                    <div class="nav__btn">
-                        <a href="derivadas">Aprender más</a>
-                        <a href="testDerivadas">Tomar test</a>
-                    </div>
-                </div>
-                <div class="nav__subtitle">
-                    <div class="nav__subtitle--content">
-                        <span class="nav__subtitle--materia">Cálculo Diferencial</span>
-                        <h2 class="nav__subtitle--head">Derivadas</h2>
-                    </div>
-                </div>
-            </div> <!--!Derivadas-->
-            <div class="nav__item nosotros">
-                <div class="nav__content">
-                    <span class="nav__materia">Cálculo Diferencial</span>
-                    <h2 class="nav__title">Nosotros</h2>
-                    <p class="nav__description">
-                        Somos un equipo apasionado de tres estudiantes del ITLA dedicados a hacer que el cálculo diferencial sea accesible y emocionante para todos. En nuestra travesía académica, hemos creado TeachMathX con el objetivo de compartir la belleza y la utilidad del cálculo diferencial.
-                    </p>
-                    <div class="nav__btn">
-                        <a href="nosotros">Ver más</a>
-                    </div>
-                </div>
-                <div class="nav__subtitle">
-                    <div class="nav__subtitle--content">
-                        <span class="nav__subtitle--materia">Cálculo Diferencial</span>
-                        <h2 class="nav__subtitle--head">Nosotros</h2>
-                    </div>
-                </div>
-            </div> <!--!Nosotros-->
+				<div class="nav__content">
+					<span class="nav__materia">Cálculo Diferencial</span>
+					<h2 class="nav__title">Funciones</h2>
+					<p class="nav__description">
+						Una función es como un puente entre dos mundos
+						matemáticos. Representada como <span>\(y = f(x)\)</span>
+						asigna a cada valor de la variable independiente <span
+							>\(x\)</span
+						> un valor único de la variable dependiente <span
+							>\(y\)</span
+						>. Estas funciones pueden describir una amplia gama de
+						fenómenos, desde el movimiento de planetas hasta el
+						crecimiento de poblaciones.
+					</p>
+					<div class="nav__btn">
+						<a href="funciones" title="¿Quieres conocer más?"
+							>Aprender más</a
+						>
+						<a
+							href="testFunciones"
+							title="¿Deseas probar tus habilidades?"
+							>Tomar test</a
+						>
+					</div>
+				</div>
+				<div class="nav__subtitle">
+					<div class="nav__subtitle--content">
+						<span class="nav__subtitle--materia"
+							>Cálculo Diferencial</span
+						>
+						<h2 class="nav__subtitle--head">Funciones</h2>
+					</div>
+				</div>
+			</div>
+			<!--!Funciones-->
+			<div class="nav__item limites">
+				<div class="nav__content">
+					<span class="nav__materia">Cálculo Diferencial</span>
+					<h2 class="nav__title">Límites</h2>
+					<p class="nav__description">
+						Al observar el comportamiento de una función cerca de un
+						punto específico, nos encontramos con el concepto de
+						límites. El límite de una función en un punto es el
+						valor al cual la función se aproxima a medida que la
+						variable independiente se acerca a ese punto. Es como
+						explorar las fronteras de lo posible en el mundo
+						matemático.
+					</p>
+					<div class="nav__btn">
+						<a href="limites">Aprender más</a>
+						<a href="testLimites">Tomar test</a>
+					</div>
+				</div>
+				<div class="nav__subtitle">
+					<div class="nav__subtitle--content">
+						<span class="nav__subtitle--materia"
+							>Cálculo Diferencial</span
+						>
+						<h2 class="nav__subtitle--head">Límites</h2>
+					</div>
+				</div>
+			</div>
+			<!--!Límites-->
+			<div class="nav__item continuidad">
+				<div class="nav__content">
+					<span class="nav__materia">Cálculo Diferencial</span>
+					<h2 class="nav__title">Continuidad</h2>
+					<p class="nav__description">
+						Imagina seguir el recorrido de una función sin saltos ni
+						quiebres. Decimos que una función es continua si no hay
+						interrupciones en su trayectoria. Esto implica que el
+						valor de la función en un punto coincide con el valor al
+						cual se acerca a medida que te acercas más a ese punto.
+					</p>
+					<div class="nav__btn">
+						<a href="continuidad">Aprender más</a>
+						<a href="testContinuidad">Tomar test</a>
+					</div>
+				</div>
+				<div class="nav__subtitle">
+					<div class="nav__subtitle--content">
+						<span class="nav__subtitle--materia"
+							>Cálculo Diferencial</span
+						>
+						<h2 class="nav__subtitle--head">Continuidad</h2>
+					</div>
+				</div>
+			</div>
+			<!--!Continuidad-->
+			<div class="nav__item derivadas">
+				<div class="nav__content">
+					<span class="nav__materia">Cálculo Diferencial</span>
+					<h2 class="nav__title">Derivadas</h2>
+					<p class="nav__description">
+						La derivada de una función captura la esencia del cambio
+						instantáneo. En términos más simples, es la tasa de
+						cambio de una función en un punto específico.
+						Visualmente, la derivada representa la inclinación de la
+						tangente a la curva de la función en ese punto,
+						proporcionando una visión detallada de cómo la función
+						evoluciona.
+					</p>
+					<div class="nav__btn">
+						<a href="derivadas">Aprender más</a>
+						<a href="testDerivadas">Tomar test</a>
+					</div>
+				</div>
+				<div class="nav__subtitle">
+					<div class="nav__subtitle--content">
+						<span class="nav__subtitle--materia"
+							>Cálculo Diferencial</span
+						>
+						<h2 class="nav__subtitle--head">Derivadas</h2>
+					</div>
+				</div>
+			</div>
+			<!--!Derivadas-->
+			<div class="nav__item nosotros">
+				<div class="nav__content">
+					<span class="nav__materia">Cálculo Diferencial</span>
+					<h2 class="nav__title">Nosotros</h2>
+					<p class="nav__description">
+						Somos un equipo apasionado de tres estudiantes del ITLA
+						dedicados a hacer que el cálculo diferencial sea
+						accesible y emocionante para todos. En nuestra travesía
+						académica, hemos creado TeachMathX con el objetivo de
+						compartir la belleza y la utilidad del cálculo
+						diferencial.
+					</p>
+					<div class="nav__btn">
+						<a href="nosotros">Ver más</a>
+					</div>
+				</div>
+				<div class="nav__subtitle">
+					<div class="nav__subtitle--content">
+						<span class="nav__subtitle--materia"
+							>Cálculo Diferencial</span
+						>
+						<h2 class="nav__subtitle--head">Nosotros</h2>
+					</div>
+				</div>
+			</div>
+			<!--!Nosotros-->
 		</div>
 
 		<div class="nav__preview">
@@ -200,7 +244,7 @@ import '../css/index.css';
 		}
 
 		function startAutoSlide() {
-			interval = setInterval( () => {
+			interval = setInterval(() => {
 				moveSlider('next');
 			}, 5000); // Cambia de slide cada 5 segundos
 		}
