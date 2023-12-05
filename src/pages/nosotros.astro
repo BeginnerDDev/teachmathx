@@ -1,31 +1,159 @@
 ---
-import Header from "../components/header.astro";
-import Layout from "../components/layout.astro";
-import Menu from "../components/menu.astro";
-
+import Card from '../components/card.astro';
 ---
 
-<Layout 
-pageTitle="Nosotros"
-pageDescription=""
->
-    <Menu 
-        temario_1="Conceptos"
-        temario_2="Tipos"
-        temario_3="Características"
-        temario_4="Ejemplos"
-        temario_5="Aplicación"
-        prev="derivadas"
-        home="/"
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="logo.svg" type="image/svg" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		/>
+		<title>Nosotros | TeachMathX</title>
 
-    />
+		<style lang="scss">
+			@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Raleway:wght@200;300;400;500&display=swap');
 
-    <Header title="Nosotros"/>
+			*,
+			*::before,
+			*::after {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				text-decoration: none;
+			}
 
-    <section slot="main">
-        Estoy en Nosotros!!!
-    </section>
+			body {
+				font-family: 'Raleway', sans-serif;
+				overflow: hidden;
+			}
 
-    
-    
-</Layout>
+			.main {
+				width: 100%;
+				height: 100vh;
+				background:
+					linear-gradient(
+						180deg,
+						rgb(0 0 0 / 0.5),
+						transparent,
+						transparent
+					),
+					url(https://terminaldelinux.com/assets/header-terminal.webp)
+						no-repeat top center/cover;
+				.header {
+					width: 100%;
+					height: 100px;
+					padding: 20px 10%;
+					background: transparent;
+					backdrop-filter: blur(5px);
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					z-index: 100;
+
+					.logo {
+						span {
+							font-size: 24px;
+							font-weight: 600;
+							color: #fff;
+						}
+					}
+
+					.btn {
+						scale: 0.8;
+						animation: flotar 1s ease-in infinite alternate both;
+						a {
+							display: block;
+							padding: 17px;
+							border-radius: 6px;
+							color: #fff;
+							background: rgb(192 81 255);
+							transition: background 500ms;
+
+							&:hover {
+								background: rgb(192 81 255 / 0.8);
+							}
+						}
+
+						@keyframes flotar {
+							to {
+								scale: 0.9;
+							}
+						}
+					}
+				}
+
+				.container {
+					width: 100%;
+					height: calc(100vh - 100px);
+
+					h2 {
+						margin-block: 25px 50px;
+						font-size: 48px;
+						color: #fff;
+						letter-spacing: 2px;
+						text-align: center;
+						text-shadow: 0 0 6px rgb(255 255 255 / 0.6);
+					}
+
+					.card {
+						width: 100%;
+						width: 100%;
+						display: flex;
+						flex-wrap: wrap;
+						align-items: center;
+						justify-content: center;
+						gap: 30px;
+					}
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main class="main">
+			<header class="header">
+				<div class="logo">
+					<a href="/">
+						<span>TeachMathX</span>
+					</a>
+				</div>
+				<div class="btn">
+					<a href="funciones">Comienzar aprender</a>
+				</div>
+			</header>
+
+			<section class="container">
+				<h2>Nosotros</h2>
+				<div class="card">
+					<Card
+						name="Albert Daniel Valdemora Suarez"
+						desc="Estudiante del ITLA"
+						ig="https://www.instagram.com/albert.v15/"
+						fb="https://www.facebook.com/albert.valdemorasuarez"
+						ws="https://wa.me/18499183303?text=klk"
+						mail="mailto:albertvaldemora@hotmail.com"
+					/>
+					<Card
+						name="Francheska Guillermo"
+						desc="Estudiante del ITLA"
+						ig="https://www.instagram.com/franchequitaaa/"
+						fb="#"
+						ws="https://wa.me/18096482109?text=klk"
+						mail="mailto:francheska.guillermo2109@gmail.com"
+					/>
+					<Card
+						name="Yunior Abel Pérez Vásquez"
+						desc="Estudiante del ITLA"
+						ig="https://www.instagram.com/_newleg/"
+						fb="https://www.facebook.com/JuniorA.Perez354/"
+						ws="https://wa.me/18494070447?text=klk"
+						mail="mailto:juniora.perez369@gmail.com"
+					/>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

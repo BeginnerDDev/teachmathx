@@ -1,9 +1,117 @@
 ---
 interface Props {
-    
+	name?: string;
+	desc?: string;
+	ig?: string;
+	fb?: string;
+	ws?: string;
+	mail?: string;
+    img?: string
 }
 
-const {} = Astro.props
-
+const { name, desc, ig, fb, ws, mail , img} = Astro.props;
 ---
 
+<style>
+    a {
+        text-decoration: none;
+    }
+	.card {
+		width: 650px;
+		height: 255px;
+		border-radius: 0.625rem;
+        background: linear-gradient(135deg, rgb(255 255 255 / .1), rgb(255 255 255 / 0));
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 8px 32px 0 rgb(0 0 0 / .37);
+        border: 1px solid rgb(255 255 255 / .18);
+		overflow: hidden;
+        display: flex;
+	}
+
+	.card .card__top {
+		width: 250px;
+        background: url(math.gif) no-repeat center center/cover;
+	}
+
+	.card .card__bottom {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.card__bottom h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+        color: #eee;
+	}
+
+	.card__bottom span {
+        font-size: 16px;
+		color: rgb(255 255 255 / 0.5);
+	}
+
+	.card__bottom .text {
+        padding-inline: 15px;
+        font-size: 17px;
+        text-align: center;
+        text-wrap: balance;
+        color: #eee;
+	}
+
+	.card__bottom .card__socials {
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	.card__socials i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+		width: 35px;
+		height: 35px;
+		font-size: 1rem;
+		color: #fff;
+		border-radius: 50%;
+	}
+
+	.card__socials i[class$='fa-facebook-f'] {
+		background: #3b5998;
+	}
+
+	.card__socials i[class$='fa-instagram'] {
+		background: #e4405f;
+		transition: background 250ms ease;
+	}
+
+	.card__socials i[class$='fa-instagram']:hover {
+		background: #b13149;
+	}
+
+	.card__socials i[class$='fa-whatsapp'] {
+		background: #25D366;
+	}
+
+	.card__socials i[class$='fa-envelope'] {
+		background: #0e76a8;
+	}
+</style>
+
+<div class="card">
+    <div class="card__top">
+        <img src={img} />
+    </div>
+	<div class="card__bottom">
+		<h3>{name}</h3>
+		<span>Software Developer</span>
+		<p class="text">Estudiante del ITLA, actualmente cursando el 3er. cuatrimestre. Proyecto realizado para la materia de <strong>Cálculo Diferencial</strong>.</p>
+		<div class="card__socials">
+			<a href={fb} target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+			<a href={ig} target="_blank"><i class="fa-brands fa-instagram"></i></a>
+			<a href={ws} target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+			<a href={mail} target="_blank"><i class="fa-regular fa-envelope"></i></a>
+		</div>
+	</div>
+</div>
