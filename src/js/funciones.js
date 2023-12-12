@@ -1,3 +1,5 @@
+//Array de objetos con las preguntas
+
 let questionsF = [
 	{
 		id: 1,
@@ -120,6 +122,7 @@ let questionsF = [
 		],
 	}
 ];
+
 
 const starBtn = document.querySelector('.home__btn');
 const popupInfo = document.querySelector('.popup');
@@ -266,6 +269,9 @@ function headerScore() {
 	const headerScoreText = document.querySelector('.header-score')
 	headerScoreText.textContent = `Puntuación: ${userScore} / ${questionsF.length}`
 }
+
+
+//Recuperar el resultado al finalizar el quiz
 
 function showResultBox() {
 	quizBox.classList.remove('active')

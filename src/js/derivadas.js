@@ -249,7 +249,7 @@ function optionSelected(answer) {
 		}
 	}
 
-	//Verifica si hay una opcioón seleccionada, deshabilita las otras opciones.
+	//Verifica si hay una opción seleccionada, deshabilita las otras opciones.
 	for (let i = 0; i < allOptions; i++) {
 		optionList.children[i].classList.add('disabled')
 	}
